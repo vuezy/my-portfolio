@@ -1,0 +1,101 @@
+.container {
+  padding: 4rem 10rem;
+  background-image: linear-gradient(
+    rgb(114, 212, 211),
+    rgb(218, 255, 254),
+    white
+  );
+  font-family: 'Roboto', sans-serif;
+}
+
+.profile {
+  padding: 0;
+  text-align: center;
+  box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+.name {
+  text-shadow: 2px 5px 5px rgba(1, 1, 28, 0.3);
+}
+
+.line {
+  border: 2px solid rgb(27, 13, 1);
+}
+
+.aboutMe {
+  font-weight: 500;
+}
+
+.contacts1 {
+  display: block;
+}
+
+.contacts2 {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    padding: 4rem 8rem 2rem 8rem;
+  }
+
+  .aboutMe {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 992px) {   
+  .container {
+    padding: 4rem 4rem 2rem 4rem;
+  }
+
+  .name {
+    font-size: 2rem;
+  }
+  
+  .aboutMe {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 3rem 3rem 2rem 3rem;
+  }
+
+  .name {
+    font-size: 1.5rem;
+  }
+  
+  .aboutMe {
+    font-size: 0.8rem;
+  }
+
+  .contacts1 {
+    display: none;
+  }
+
+  .contacts2 {
+    display: block;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 2rem;
+  }
+
+  .name {
+    margin-top: 1.2rem;
+    text-align: center;
+    font-size: 1.3rem;
+  }
+
+  .line {
+    margin: 0.8rem 0 0.5rem 0;
+  }
+
+  .aboutMe {
+    text-align: justify;
+  }
+}
