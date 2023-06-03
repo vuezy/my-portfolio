@@ -17,11 +17,11 @@ import musicAppImg2 from '../images/music-app-2.PNG'
 import quizAppImg1 from '../images/quiz-app-1.PNG'
 import quizAppImg2 from '../images/quiz-app-2.PNG'
 import quizAppImg3 from '../images/quiz-app-3.PNG'
-import productsImg1 from '../images/products-1.PNG'
-import productsImg2 from '../images/products-2.PNG'
-import productsImg3 from '../images/products-3.PNG'
-import productsImg4 from '../images/products-4.PNG'
-import productsImg5 from '../images/products-5.PNG'
+import androidChatAppImg1 from '../images/android-chat-app-1.jpg'
+import androidChatAppImg2 from '../images/android-chat-app-2.jpg'
+import androidChatAppImg3 from '../images/android-chat-app-3.jpg'
+import androidChatAppImg4 from '../images/android-chat-app-4.jpg'
+import androidChatAppImg5 from '../images/android-chat-app-5.jpg'
 import siPenggajianImg1 from '../images/si-penggajian-1.PNG'
 import siPenggajianImg2 from '../images/si-penggajian-2.PNG'
 import siPenggajianImg3 from '../images/si-penggajian-3.PNG'
@@ -31,6 +31,7 @@ import guessingGameImg1 from '../images/guessing-game-1.PNG'
 import guessingGameImg2 from '../images/guessing-game-2.PNG'
 import guessingGameImg3 from '../images/guessing-game-3.PNG'
 import guessingGameImg4 from '../images/guessing-game-4.PNG'
+import { ReactComponent as JavaLogo } from '../icons/java.svg'
 import { ReactComponent as VueLogo } from '../icons/vue.svg'
 import { ReactComponent as ReactLogo } from '../icons/react.svg'
 import { ReactComponent as FlutterLogo } from '../icons/flutter.svg'
@@ -102,14 +103,14 @@ const projects = [
     link: 'https://github.com/vuezy/react-trivia-quiz'
   },
   {
-    img: [productsImg1, productsImg2, productsImg3, productsImg4, productsImg5],
-    title: 'Simple Products UI',
+    img: [androidChatAppImg1, androidChatAppImg2, androidChatAppImg3, androidChatAppImg4, androidChatAppImg5],
+    title: 'Android Chat App',
     content: (
       <Row className="justify-content-center align-items-center mb-4">
-        <Col xs={2} className="text-center p-0 p-sm-1"><FlutterLogo /></Col>
+        <Col xs={2} className="text-center p-0 p-sm-1"><JavaLogo /></Col>
       </Row>
     ),
-    link: 'https://github.com/vuezy/flutter-products-ui'
+    link: 'https://github.com/vuezy/java-android-chat-app'
   },
   {
     img: [siPenggajianImg1, siPenggajianImg2, siPenggajianImg3, siPenggajianImg4, siPenggajianImg5],

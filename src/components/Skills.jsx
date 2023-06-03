@@ -4,12 +4,12 @@ import { Container, Row, Col } from 'react-bootstrap'
 import styles from '../assets/styles/Skills.module.css'
 import { ReactComponent as CppLogo } from '../assets/icons/cpp.svg'
 import { ReactComponent as PythonLogo } from '../assets/icons/python.svg'
+import { ReactComponent as JavaLogo } from '../assets/icons/java.svg'
+import { ReactComponent as DartLogo } from '../assets/icons/dart.svg'
 import { ReactComponent as HtmlLogo } from '../assets/icons/html.svg'
 import { ReactComponent as CssLogo } from '../assets/icons/css.svg'
 import { ReactComponent as JsLogo } from '../assets/icons/js.svg'
 import { ReactComponent as PhpLogo } from '../assets/icons/php.svg'
-import { ReactComponent as DartLogo } from '../assets/icons/dart.svg'
-import { ReactComponent as CiLogo } from '../assets/icons/ci.svg'
 import { ReactComponent as NodeLogo } from '../assets/icons/node.svg'
 import { ReactComponent as ExpressLogo } from '../assets/icons/express.svg'
 import { ReactComponent as SequelizeLogo } from '../assets/icons/sequelize.svg'
@@ -18,6 +18,7 @@ import { ReactComponent as ReactLogo } from '../assets/icons/react.svg'
 import { ReactComponent as FlutterLogo } from '../assets/icons/flutter.svg'
 import { ReactComponent as MysqlLogo } from '../assets/icons/mysql.svg'
 import { ReactComponent as MongodbLogo } from '../assets/icons/mongodb.svg'
+import { ReactComponent as AndroidLogo } from '../assets/icons/android.svg'
 import { ReactComponent as GitLogo } from '../assets/icons/git.svg'
 import { ReactComponent as DockerLogo } from '../assets/icons/docker.svg'
 
@@ -42,14 +43,16 @@ const Skills = () => {
       <Row className="justify-content-center align-items-center">
         <Col xs={1} className="text-center px-0 px-sm-1 px-lg-2"><CppLogo /></Col>
         <Col xs={1} className="text-center px-0 px-sm-1 px-lg-2"><PythonLogo /></Col>
+        <Col xs={1} className="text-center px-0 px-sm-1 px-lg-2"><JavaLogo /></Col>
+        <Col xs={1} className="text-center px-0 px-sm-1 px-lg-2"><DartLogo /></Col>
+      </Row>
+      <Row className="justify-content-center align-items-center py-1">
         <Col xs={1} className="text-center px-0 px-sm-1 px-lg-2"><HtmlLogo /></Col>
         <Col xs={1} className="text-center px-0 px-sm-1 px-lg-2"><CssLogo /></Col>
         <Col xs={1} className="text-center px-0 px-sm-1 px-lg-2"><JsLogo /></Col>
         <Col xs={1} className="text-center px-0 px-sm-1 px-lg-2"><PhpLogo /></Col>
-        <Col xs={1} className="text-center px-0 px-sm-1 px-lg-2"><DartLogo /></Col>
       </Row>
       <Row className="justify-content-center align-items-center py-1">
-        <Col xs={1} className="text-center px-0 px-sm-1 px-lg-2"><CiLogo /></Col>
         <Col xs={1} className="text-center px-0 px-sm-1 px-lg-2"><NodeLogo /></Col>
         <Col xs={1} className="text-center px-0 px-sm-1 px-lg-2"><ExpressLogo /></Col>
         <Col xs={1} className="text-center px-0 px-sm-1 px-lg-2"><SequelizeLogo /></Col>
@@ -60,6 +63,7 @@ const Skills = () => {
       <Row className="justify-content-center align-items-center">
         <Col xs={1} className="text-center px-0 px-sm-1 px-lg-2"><MysqlLogo /></Col>
         <Col xs={1} className="text-center px-0 px-sm-1 px-lg-2"><MongodbLogo /></Col>
+        <Col xs={1} className="text-center px-0 px-sm-1 px-lg-2"><AndroidLogo /></Col>
         <Col xs={1} className="text-center px-0 px-sm-1 px-lg-2"><GitLogo /></Col>
         <Col xs={1} className="text-center px-0 px-sm-1 px-lg-2"><DockerLogo /></Col>
       </Row>
