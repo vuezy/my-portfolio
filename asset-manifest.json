@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/my-portfolio/static/css/main.f5fa81b0.css",
-    "main.js": "/my-portfolio/static/js/main.1ecf856a.js",
+    "main.css": "/my-portfolio/static/css/main.0a9fbbd1.css",
+    "main.js": "/my-portfolio/static/js/main.176ea569.js",
     "static/media/guessing-game-3.PNG": "/my-portfolio/static/media/guessing-game-3.363c45b34d22b357cd13.PNG",
     "static/media/guessing-game-2.PNG": "/my-portfolio/static/media/guessing-game-2.5e4e2f1bc2fe1895aab2.PNG",
     "static/media/guessing-game-4.PNG": "/my-portfolio/static/media/guessing-game-4.1c15dd59efc31e740836.PNG",
@@ -17,10 +17,14 @@
     "static/media/quiz-app-1.PNG": "/my-portfolio/static/media/quiz-app-1.73af11fe2d68e5e2d10a.PNG",
     "static/media/music-app-2.PNG": "/my-portfolio/static/media/music-app-2.4fd55d51be8e153306d3.PNG",
     "static/media/todo-app-3.PNG": "/my-portfolio/static/media/todo-app-3.6979514ac08f4d0e0dfd.PNG",
+    "static/media/ask-answer-app-1.jpg": "/my-portfolio/static/media/ask-answer-app-1.aadfcdc3ec77a9bb3345.jpg",
+    "static/media/ask-answer-app-2.jpg": "/my-portfolio/static/media/ask-answer-app-2.4d5094176a98341219a8.jpg",
     "static/media/food-shop-1.PNG": "/my-portfolio/static/media/food-shop-1.ff3fc7d4921ef0d5e1ab.PNG",
     "static/media/quiz-app-3.PNG": "/my-portfolio/static/media/quiz-app-3.e64be1d6605448aee01a.PNG",
     "static/media/todo-app-2.PNG": "/my-portfolio/static/media/todo-app-2.c45b60acdc9c64680744.PNG",
+    "static/media/ask-answer-app-3.jpg": "/my-portfolio/static/media/ask-answer-app-3.9f8faaf952d9ef3a11e5.jpg",
     "static/media/android-chat-app-5.jpg": "/my-portfolio/static/media/android-chat-app-5.0043e360072612dd0eb6.jpg",
+    "static/media/ask-answer-app-4.jpg": "/my-portfolio/static/media/ask-answer-app-4.88e20f4cce4c2e0bbd15.jpg",
     "static/media/android-chat-app-3.jpg": "/my-portfolio/static/media/android-chat-app-3.3100cdcb9cd36aef360d.jpg",
     "static/media/android-chat-app-2.jpg": "/my-portfolio/static/media/android-chat-app-2.1b0b19fd93b939bca11a.jpg",
     "static/media/android-chat-app-1.jpg": "/my-portfolio/static/media/android-chat-app-1.656f32f51f9941b622b4.jpg",
@@ -46,8 +50,10 @@
     "static/media/react.svg": "/my-portfolio/static/media/react.8d61fa262af318f843ffc5dcddb7156f.svg",
     "static/media/python.svg": "/my-portfolio/static/media/python.1249b17e42c884b83735ef77d80c6f28.svg",
     "static/media/git.svg": "/my-portfolio/static/media/git.4f75a9de2f824170611775fc478b5f1c.svg",
+    "static/media/go.svg": "/my-portfolio/static/media/go.ec6dd433f44fb3824c3cf10e17eb5dba.svg",
     "static/media/mail.svg": "/my-portfolio/static/media/mail.03166fb42f1e652554c81c1ee0b8835c.svg",
     "static/media/github.svg": "/my-portfolio/static/media/github.50e9d40080a01f6fb34c36a38f3a83f0.svg",
+    "static/media/kotlin.svg": "/my-portfolio/static/media/kotlin.fbc4e5328d71c6bfb9730e3249a6b105.svg",
     "static/media/android.svg": "/my-portfolio/static/media/android.c9ae09ba760eb33ff89edafc3c13403c.svg",
     "static/media/js.svg": "/my-portfolio/static/media/js.c51781cf9d16611c1f8d1cd0a75c802f.svg",
     "static/media/css.svg": "/my-portfolio/static/media/css.5e88200b268a581f3113a8e55bdc9f51.svg",
@@ -59,11 +65,11 @@
     "static/media/vue.svg": "/my-portfolio/static/media/vue.81e69c4225e77071698ef791b0ef976e.svg",
     "static/media/chevron-right.svg": "/my-portfolio/static/media/chevron-right.dd532fd65530a8441bb584fa3ff4c328.svg",
     "static/media/chevron-left.svg": "/my-portfolio/static/media/chevron-left.c163f94ed4fe71d749965cdb0c4dc066.svg",
-    "main.f5fa81b0.css.map": "/my-portfolio/static/css/main.f5fa81b0.css.map",
-    "main.1ecf856a.js.map": "/my-portfolio/static/js/main.1ecf856a.js.map"
+    "main.0a9fbbd1.css.map": "/my-portfolio/static/css/main.0a9fbbd1.css.map",
+    "main.176ea569.js.map": "/my-portfolio/static/js/main.176ea569.js.map"
   },
   "entrypoints": [
-    "static/css/main.f5fa81b0.css",
-    "static/js/main.1ecf856a.js"
+    "static/css/main.0a9fbbd1.css",
+    "static/js/main.176ea569.js"
   ]
 }
