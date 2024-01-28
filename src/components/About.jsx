@@ -20,10 +20,11 @@ const About = () => {
           <h1 className={styles.name}>SHANE CHRISTIAN KWOK</h1>
           <hr className={styles.line} />
           <p className={styles.aboutMe}>
-            I am a 19-year-old Computer Science student (currently in the fifth semester) at Universitas Prima Indonesia.
+            I am a 20-year-old Computer Science student (currently in the sixth semester) at Universitas Prima Indonesia.
             Ever since I started my coding journey in high school, I have always loved to learn something new related to programming and hone my problem solving skill.
             I am a determined, hardworking, and passionate person. I want to gain more knowledge and experience by working in team.
-            Additionally, I have multiple gold and silver medals as the achievements acquired from several computer and informatics competitions I participated in (one of them is OSN at regency stage).
+            Additionally, I have multiple gold and silver medals as the achievements acquired from several computer and informatics competitions I participated in 
+            (one of them is Olimpiade Sains Nasional at regency stage).
           </p>
           <div className={styles.contacts1} data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500" data-aos-once="true">
             <Contact />

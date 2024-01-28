@@ -22,6 +22,10 @@ import androidChatAppImg2 from '../images/android-chat-app-2.jpg'
 import androidChatAppImg3 from '../images/android-chat-app-3.jpg'
 import androidChatAppImg4 from '../images/android-chat-app-4.jpg'
 import androidChatAppImg5 from '../images/android-chat-app-5.jpg'
+import askAnswerAppImg1 from '../images/ask-answer-app-1.jpg'
+import askAnswerAppImg2 from '../images/ask-answer-app-2.jpg'
+import askAnswerAppImg3 from '../images/ask-answer-app-3.jpg'
+import askAnswerAppImg4 from '../images/ask-answer-app-4.jpg'
 import siPenggajianImg1 from '../images/si-penggajian-1.PNG'
 import siPenggajianImg2 from '../images/si-penggajian-2.PNG'
 import siPenggajianImg3 from '../images/si-penggajian-3.PNG'
@@ -31,7 +35,9 @@ import guessingGameImg1 from '../images/guessing-game-1.PNG'
 import guessingGameImg2 from '../images/guessing-game-2.PNG'
 import guessingGameImg3 from '../images/guessing-game-3.PNG'
 import guessingGameImg4 from '../images/guessing-game-4.PNG'
+import { ReactComponent as GoLogo } from '../icons/go.svg'
 import { ReactComponent as JavaLogo } from '../icons/java.svg'
+import { ReactComponent as KotlinLogo } from '../icons/kotlin.svg'
 import { ReactComponent as VueLogo } from '../icons/vue.svg'
 import { ReactComponent as ReactLogo } from '../icons/react.svg'
 import { ReactComponent as FlutterLogo } from '../icons/flutter.svg'
@@ -113,8 +119,20 @@ const projects = [
     link: 'https://github.com/vuezy/java-android-chat-app'
   },
   {
+    img: [askAnswerAppImg1, askAnswerAppImg2, askAnswerAppImg3, askAnswerAppImg4],
+    title: 'Ask&Answer (Android App)',
+    content: (
+      <Row className="justify-content-center align-items-center mb-4">
+        <Col xs={2} className="text-center p-0 p-sm-1"><KotlinLogo /></Col>
+        <Col xs={2} className="text-center p-0 p-sm-1"><GoLogo /></Col>
+        <Col xs={2} className="text-center p-0 p-sm-1"><MysqlLogo /></Col>
+      </Row>
+    ),
+    link: 'https://github.com/vuezy/kotlin-ask-and-answer'
+  },
+  {
     img: [siPenggajianImg1, siPenggajianImg2, siPenggajianImg3, siPenggajianImg4, siPenggajianImg5],
-    title: 'Sistem Informasi Penggajian Karyawan',
+    title: 'Payroll Information System',
     content: (
       <Row className="justify-content-center align-items-center mb-4">
         <Col xs={2} className="text-center p-0 p-sm-1"><FlutterLogo /></Col>

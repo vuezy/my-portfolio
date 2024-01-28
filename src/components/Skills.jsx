@@ -3,8 +3,10 @@ import AOS from 'aos'
 import { Container, Row, Col } from 'react-bootstrap'
 import styles from '../assets/styles/Skills.module.css'
 import { ReactComponent as CppLogo } from '../assets/icons/cpp.svg'
+import { ReactComponent as GoLogo } from '../assets/icons/go.svg'
 import { ReactComponent as PythonLogo } from '../assets/icons/python.svg'
 import { ReactComponent as JavaLogo } from '../assets/icons/java.svg'
+import { ReactComponent as KotlinLogo } from '../assets/icons/kotlin.svg'
 import { ReactComponent as DartLogo } from '../assets/icons/dart.svg'
 import { ReactComponent as HtmlLogo } from '../assets/icons/html.svg'
 import { ReactComponent as CssLogo } from '../assets/icons/css.svg'
@@ -32,18 +34,20 @@ const Skills = () => {
       <Container className={styles.skills}>
         <Container as="h1" className={styles.title}>SKILLS</Container>
         My dominant skills are <span className="fw-bold">problem solving</span> and <span className="fw-bold">critical thinking</span>.<br />
-        I have knowledge in <span className="fw-bold">frontend web development</span>, <span className="fw-bold">backend web development</span>,
-        <span className="fw-bold"> mobile app development</span>, <span className="fw-bold">machine learning</span>, 
-        and <span className="fw-bold">cyber security</span>.<br />
+        I am quite versatile in various areas. I have knowledge in <span className="fw-bold">frontend web development</span>,
+        <span className="fw-bold"> backend web development</span>, and <span className="fw-bold">mobile app development</span>.
+        I also have some familiarity with <span className="fw-bold">machine learning</span> and <span className="fw-bold">cyber security</span>.<br />
         However, I usually feel more comfortable working in <span className="fw-bold">backend development</span>.<br /><br />
         Here are <span className="fw-bold">programming languages</span>,
         <span className="fw-bold"> frameworks</span>, <span className="fw-bold">technologies</span>, and
-        <span className="fw-bold"> tools</span> I have learned <span className="fst-italic">(and still learning)</span>.
+        <span className="fw-bold"> tools</span> I have learned <span className="fst-italic">(and still keep learning)</span>.
       </Container>
       <Row className="justify-content-center align-items-center">
         <Col xs={1} className="text-center px-0 px-sm-1 px-lg-2"><CppLogo /></Col>
+        <Col xs={1} className="text-center px-0 px-sm-1 px-lg-2"><GoLogo /></Col>
         <Col xs={1} className="text-center px-0 px-sm-1 px-lg-2"><PythonLogo /></Col>
         <Col xs={1} className="text-center px-0 px-sm-1 px-lg-2"><JavaLogo /></Col>
+        <Col xs={1} className="text-center px-0 px-sm-1 px-lg-2"><KotlinLogo /></Col>
         <Col xs={1} className="text-center px-0 px-sm-1 px-lg-2"><DartLogo /></Col>
       </Row>
       <Row className="justify-content-center align-items-center py-1">
