@@ -1,0 +1,43 @@
+import Link from "next/link";
+import GitHubIcon from "../icons/GitHubIcon";
+import LinkedInIcon from "../icons/LinkedInIcon";
+import profile from "@/data/profile.json";
+
+const footLinks = [
+  {
+    href: profile.github,
+    label: "GitHub",
+    icon: <GitHubIcon className="h-4 w-4" />,
+  },
+  {
+    href: profile.linkedin,
+    label: "LinkedIn",
+    icon: <LinkedInIcon className="h-4 w-4" />,
+  },
+];
+
+export default function Footer() {
+  return (
+    <footer className="w-full border-t border-border mt-24">
+      <div className="mx-auto flex h-16 max-w-3xl items-center justify-between px-6">
+        <p className="text-xs text-muted-foreground">
+          © {new Date().getFullYear()} {profile.name}
+        </p>
+
+        <nav className="flex flex-col xs:flex-row xs:items-center justify-start gap-2.5 xs:gap-5">
+          {footLinks.map(({ href, label, icon }) => (
+            <Link
+              key={href}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex align-items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors"
+            >
+              {icon} {label}
+            </Link>
+          ))}
+        </nav>
+      </div>
+    </footer>
+  );
+}
