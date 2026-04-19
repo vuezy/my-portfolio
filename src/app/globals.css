@@ -34,6 +34,8 @@
   --color-input: var(--input);
   --color-border: var(--border);
   --color-destructive: var(--destructive);
+  --color-avail-green: var(--avail-green);
+  --color-ruled-line: var(--ruled-line);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent: var(--accent);
   --color-muted-foreground: var(--muted-foreground);
@@ -71,6 +73,8 @@
   --accent: oklch(0.62 0.07 240);
   --accent-foreground: oklch(0.14 0.01 265);
   --destructive: oklch(0.577 0.245 27.325);
+  --avail-green: oklch(0.50 0.15 150);
+  --ruled-line: oklch(0 0 0 / 4%);
   --border: oklch(0.88 0.005 265);
   --input: oklch(0.88 0.005 265);
   --ring: oklch(0.62 0.07 240);
@@ -106,6 +110,8 @@
   --accent: oklch(0.62 0.07 240);
   --accent-foreground: oklch(0.18 0.005 265);
   --destructive: oklch(0.704 0.191 22.216);
+  --avail-green: oklch(0.65 0.15 150);
+  --ruled-line: oklch(1 0 0 / 2.5%);
   --border: oklch(1 0 0 / 8%);
   --input: oklch(1 0 0 / 12%);
   --ring: oklch(0.62 0.07 240);
@@ -128,13 +134,60 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    @apply font-sans scroll-smooth;
+  }
   body {
     @apply bg-background text-foreground;
   }
-  html {
-    @apply font-sans;
-  }
   h1, h2, h3, h4 {
-    font-family: var(--font-serif);
+    @apply font-serif;
+  }
+}
+
+@utility ruled {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent,
+      transparent 45px,
+      var(--color-ruled-line) 45px,
+      var(--color-ruled-line) 46px
+    );
+    pointer-events: none;
+  }
+}
+
+@utility bracket-frame {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-style: solid;
+    border-color: var(--color-primary);
+    z-index: 2;
+    opacity: 0.6;
+  }
+
+  &::before {
+    top: -5px;
+    left: -5px;
+    border-width: 2px 0 0 2px;
+  }
+
+  &::after {
+    bottom: -5px;
+    right: -5px;
+    border-width: 0 2px 2px 0;
   }
 }

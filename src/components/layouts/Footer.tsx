@@ -18,8 +18,8 @@ const footLinks = [
 
 export default function Footer() {
   return (
-    <footer className="w-full border-t border-border mt-24">
-      <div className="mx-auto flex h-16 max-w-3xl items-center justify-between px-6">
+    <footer className="w-full border-t border-border mt-16">
+      <div className="mx-auto flex h-16 max-w-5xl 2xl:max-w-6xl items-center justify-between gap-x-2 px-6">
         <p className="text-xs text-muted-foreground">
           © {new Date().getFullYear()} {profile.name}
         </p>
