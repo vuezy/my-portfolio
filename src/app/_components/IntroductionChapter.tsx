@@ -10,6 +10,7 @@ export default function IntroductionChapter() {
   
   return (
     <Chapter
+      id="introduction"
       title="Introduction"
       chapterNumber={0}
       lastUpdated={lastUpdated}

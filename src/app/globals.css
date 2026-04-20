@@ -111,7 +111,7 @@
   --accent-foreground: oklch(0.18 0.005 265);
   --destructive: oklch(0.704 0.191 22.216);
   --avail-green: oklch(0.65 0.15 150);
-  --ruled-line: oklch(1 0 0 / 2.5%);
+  --ruled-line: oklch(1 0 0 / 4%);
   --border: oklch(1 0 0 / 8%);
   --input: oklch(1 0 0 / 12%);
   --ring: oklch(0.62 0.07 240);
@@ -147,6 +147,7 @@
 
 @utility ruled {
   position: relative;
+  z-index: 10;
 
   &::after {
     content: '';
@@ -156,9 +157,9 @@
     background-image: repeating-linear-gradient(
       to bottom,
       transparent,
-      transparent 45px,
-      var(--color-ruled-line) 45px,
-      var(--color-ruled-line) 46px
+      transparent 40px,
+      var(--color-ruled-line) 40px,
+      var(--color-ruled-line) 41px
     );
     pointer-events: none;
   }
