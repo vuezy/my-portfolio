@@ -17,7 +17,7 @@ export default function IntroductionChapter() {
       lastUpdated={lastUpdated}
       nextChapterId="about-me"
     >
-      <div className="grid grid-cols-1 sm:grid-cols-[1fr_200px] items-center gap-12 mb-10">
+      <div className="grid grid-cols-1 sm:grid-cols-[1fr_200px] items-center gap-12">
         <div className="flex flex-col order-2 sm:order-1">
           <em className="font-medium tracking-[-0.02rem] mb-2.5 text-3xl xs:text-5xl md:text-6xl text-primary">{profile.name}</em>
 

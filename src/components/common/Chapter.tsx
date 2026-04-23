@@ -30,7 +30,7 @@ export default function Chapter({ id, title, chapterNumber, lastUpdated, nextCha
       {children}
 
       {nextChapterId && 
-        <a href={`#${nextChapterId}`} className="flex flex-col items-center w-fit pb-9 mx-auto">
+        <a href={`#${nextChapterId}`} className="flex flex-col items-center w-fit mx-auto mt-10 pb-9">
           <span className="text-[10px] font-light tracking-[0.18rem] uppercase">Read On</span>
           <ChevronDownIcon className="w-4.5" />
         </a>
