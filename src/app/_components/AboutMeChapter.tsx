@@ -1,8 +1,10 @@
 import Chapter from "@/components/common/Chapter";
-import InlineCode from "@/components/common/InlineCode";
+import TechTag from "@/components/common/TechTag";
+import JavaScriptIcon from "@/components/icons/JavaScriptIcon";
+import PHPIcon from "@/components/icons/PHPIcon";
 
 export default function AboutMeChapter() {
-  const lastUpdated = new Date('2026-04-20');
+  const lastUpdated = new Date('2026-04-23');
 
   return (
     <Chapter
@@ -12,7 +14,7 @@ export default function AboutMeChapter() {
       lastUpdated={lastUpdated}
       nextChapterId="origin"
     >
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-2.5 ruled">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-2.5 text-secondary-foreground text-sm md:text-base ruled">
         <div className="md:col-span-2 order-1 md:order-2 space-y-2.5">
           <p>
             I&apos;m a backend developer who thinks through consequences before writing a single line.
@@ -50,7 +52,8 @@ export default function AboutMeChapter() {
 
           <p>
             <strong>I love learning.</strong> There&apos;s always more, and that excites me, not intimidates me.<br />
-            For example, I recently realized the difference between <InlineCode>||</InlineCode> and <InlineCode>??</InlineCode> in handling falsy values in PHP/JS. 
+            For example, I recently realized the difference between <code>||</code> and <code>??</code> in handling 
+            falsy values in <TechTag><PHPIcon /> PHP</TechTag>/<TechTag><JavaScriptIcon /> JS</TechTag>. 
             Sounds stupid, should have known it sooner, but understanding it now feels exhilarating.
           </p>
 
