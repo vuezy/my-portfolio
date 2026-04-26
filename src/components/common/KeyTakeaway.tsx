@@ -1,34 +1,71 @@
+import { cn } from "@/lib/utils";
 import { BookMarkedIcon } from "lucide-react";
-import React from "react";
+import React, { useId } from "react";
 
 interface KeyTakeawayProps {
-  bullets?: string[];
-  children?: React.ReactNode;
+  children: React.ReactNode;
 }
 
-export default function KeyTakeaway({ bullets, children }: KeyTakeawayProps) {
+export default function KeyTakeaway({ children }: KeyTakeawayProps) {
+  const labelId = useId();
+
   return (
-    <div className="mb-8 rounded-lg border border-l-4 border-l-accent bg-muted/30 p-6">
-      <div className="mb-3 flex items-center gap-3 font-serif text-lg font-medium leading-snug text-foreground md:text-xl">
-        <BookMarkedIcon className="text-accent" />
-        <span>Key Takeaway</span>
+    <div
+      role="note"
+      aria-labelledby={labelId}
+      className={cn(
+        "bg-accent/5 rounded-lg border border-accent/20 border-l-8 border-l-accent",
+        "mb-8 p-5 pl-6 md:mb-10 md:p-6 md:pl-8",
+      )}
+    >
+      <div className="flex items-center gap-2 mb-4 text-md text-primary">
+        <BookMarkedIcon className="shrink-0" />
+        <span 
+          id={labelId} 
+          className="font-serif font-semibold uppercase tracking-wider"
+        >
+          Key Takeaway
+        </span>
       </div>
 
       {children}
-
-      {bullets && bullets.length > 0 && (
-        <ul className="ml-1 space-y-2 mt-4">
-          {bullets.map((bullet, index) => (
-            <li
-              key={index}
-              className="flex items-baseline gap-2 text-secondary-foreground text-sm md:text-base font-medium"
-            >
-              <span className="shrink-0 font-serif text-accent">-</span>
-              <span>{bullet}</span>
-            </li>
-          ))}
-        </ul>
-      )}
     </div>
+  );
+}
+
+interface KeyTakeawayContentProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
+export function KeyTakeawayContent({ children, className }: KeyTakeawayContentProps) {
+  return (
+    <div className={cn("font-serif leading-relaxed text-secondary-foreground space-y-3", className)}>
+      {children}
+    </div>
+  );
+}
+
+interface KeyTakeawayListProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
+export function KeyTakeawayList({ children, className }: KeyTakeawayListProps) {
+  return (
+    <ul className={cn("ml-1 space-y-2", className)}>{children}</ul>
+  );
+}
+
+interface KeyTakeawayListItemProps {
+  children: React.ReactNode;
+}
+
+export function KeyTakeawayListItem({ children }: KeyTakeawayListItemProps) {
+  return (
+    <li className="flex items-baseline gap-2 text-secondary-foreground text-sm md:text-base font-medium">
+      <span className="shrink-0 font-serif text-accent" aria-hidden="true">-</span>
+      <span>{children}</span>
+    </li>
   );
 }

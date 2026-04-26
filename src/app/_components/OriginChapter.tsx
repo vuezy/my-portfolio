@@ -1,5 +1,5 @@
 import Chapter from "@/components/common/Chapter";
-import KeyTakeaway from "@/components/common/KeyTakeaway";
+import KeyTakeaway, { KeyTakeawayContent, KeyTakeawayList, KeyTakeawayListItem } from "@/components/common/KeyTakeaway";
 import TechTag from "@/components/common/TechTag";
 import CppIcon from "@/components/icons/CppIcon";
 import CSSIcon from "@/components/icons/CSSIcon";
@@ -12,7 +12,7 @@ import PHPIcon from "@/components/icons/PHPIcon";
 import React from "react";
 
 export default function OriginChapter() {
-  const lastUpdated = new Date('2026-04-23');
+  const lastUpdated = new Date('2026-04-26');
 
   return (
     <Chapter
@@ -22,18 +22,18 @@ export default function OriginChapter() {
       lastUpdated={lastUpdated}
     >
       <div className="ruled">
-        <KeyTakeaway
-          bullets={[
-            "Competitive programming: bottom -> 3rd place",
-            "Self-taught web dev + cybersecurity detour",
-            "Now writes backend code with security in mind"
-          ]}
-        >
-          <p className="text-muted-foreground">
-            Learn and solve problems under pressure.<br />
-            Learn from people better than you.<br />
-            Security mindset makes you a better backend dev.
-          </p>
+        <KeyTakeaway>
+          <KeyTakeawayContent className="text-muted-foreground space-y-1">
+            <p>Learn and solve problems under pressure.</p>
+            <p>Learn from people better than you.</p>
+            <p>Security mindset makes you a better backend dev.</p>
+          </KeyTakeawayContent>
+
+          <KeyTakeawayList className="mt-4">
+            <KeyTakeawayListItem>Competitive programming: bottom -{'>'} 3rd place</KeyTakeawayListItem>
+            <KeyTakeawayListItem>Self-taught web dev + cybersecurity detour</KeyTakeawayListItem>
+            <KeyTakeawayListItem>Now writes backend code with security in mind</KeyTakeawayListItem>
+          </KeyTakeawayList>
         </KeyTakeaway>
 
         <StoryArc title="The Bottom">
