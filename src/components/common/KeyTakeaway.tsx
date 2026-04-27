@@ -15,7 +15,7 @@ export default function KeyTakeaway({ children }: KeyTakeawayProps) {
       aria-labelledby={labelId}
       className={cn(
         "bg-accent/5 rounded-lg border border-accent/20 border-l-8 border-l-accent",
-        "mb-8 p-5 pl-6 md:mb-10 md:p-6 md:pl-8",
+        "p-5 pl-6 md:p-6 md:pl-8",
       )}
     >
       <div className="flex items-center gap-2 mb-4 text-md text-primary">
@@ -53,7 +53,7 @@ interface KeyTakeawayListProps {
 
 export function KeyTakeawayList({ children, className }: KeyTakeawayListProps) {
   return (
-    <ul className={cn("ml-1 space-y-2", className)}>{children}</ul>
+    <ul className={cn("text-sm md:text-base text-secondary-foreground font-medium ml-1 space-y-2", className)}>{children}</ul>
   );
 }
 
@@ -63,7 +63,7 @@ interface KeyTakeawayListItemProps {
 
 export function KeyTakeawayListItem({ children }: KeyTakeawayListItemProps) {
   return (
-    <li className="flex items-baseline gap-2 text-secondary-foreground text-sm md:text-base font-medium">
+    <li className="flex items-baseline gap-2">
       <span className="shrink-0 font-serif text-accent" aria-hidden="true">-</span>
       <span>{children}</span>
     </li>
