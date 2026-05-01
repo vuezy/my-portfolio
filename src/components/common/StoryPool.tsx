@@ -146,12 +146,12 @@ export function StoryPoolList({ className }: StoryPoolListProps) {
             tabIndex={isActive ? 0 : -1}
           >
             <div className="w-full space-y-1">
-              <h3 className="font-serif text-sm sm:text-base font-semibold flex items-center gap-2">
+              <div className="font-serif text-sm sm:text-base font-semibold flex items-center gap-2">
                 {story.icon && (
                   <span className="shrink-0">{story.icon}</span>
                 )}
                 {story.title}
-              </h3>
+              </div>
               {story.summary && (
                 <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                   {story.summary}
@@ -188,12 +188,12 @@ export function StoryPoolContent({ className }: StoryPoolContentProps) {
       <div className="leading-relaxed text-sm md:text-base text-foreground space-y-6 py-4">
         {activeStory ? (
           <>
-            <div className="flex items-center gap-2 font-serif text-base md:text-lg text-primary font-semibold mb-3">
+            <h3 className="flex items-center gap-2 font-serif text-base md:text-lg text-primary font-semibold mb-3">
               {activeStory.icon && (
                 <span className="shrink-0">{activeStory.icon}</span>
               )}
               <span className="tracking-wider uppercase underline underline-offset-4">{activeStory.title}</span>
-            </div>
+            </h3>
             {activeStory.content}
           </>
         ) : (

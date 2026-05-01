@@ -53,7 +53,7 @@ interface KeyTakeawayListProps {
 
 export function KeyTakeawayList({ children, className }: KeyTakeawayListProps) {
   return (
-    <ul className={cn("text-sm md:text-base text-secondary-foreground font-medium ml-1 space-y-2", className)}>{children}</ul>
+    <ul className={cn("text-sm md:text-base text-secondary-foreground font-sans font-medium ml-1 space-y-2", className)}>{children}</ul>
   );
 }
 

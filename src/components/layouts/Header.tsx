@@ -5,7 +5,7 @@ import profile from "@/data/profile.json";
 
 const navLinks = [
   { href: "#origin", label: "Origin" },
-  { href: "#work", label: "Work" },
+  { href: "#day-job", label: "Work" },
   { href: "#projects", label: "Projects" },
 ];
 

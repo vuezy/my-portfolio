@@ -2,6 +2,7 @@ import AboutMeChapter from "./_components/AboutMeChapter";
 import IntroductionChapter from "./_components/IntroductionChapter";
 import profile from "@/data/profile.json";
 import OriginChapter from "./_components/OriginChapter";
+import DayJobChapter from "./_components/DayJobChapter";
 
 export default function MainPage() {
   return (
@@ -10,6 +11,7 @@ export default function MainPage() {
       <IntroductionChapter />
       <AboutMeChapter />
       <OriginChapter />
+      <DayJobChapter />
     </>
   );
 }
