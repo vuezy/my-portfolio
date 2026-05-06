@@ -249,6 +249,7 @@ export default function DayJobChapter() {
       title="Day Job"
       chapterNumber={3}
       lastUpdated={lastUpdated}
+      nextChapterId="lab"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 items-stretch gap-4 ruled">
         <KeyTakeaway>
