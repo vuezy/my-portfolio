@@ -1,4 +1,5 @@
 import Chapter from "@/components/common/Chapter";
+import Quote from "@/components/common/Quote";
 import TechTag from "@/components/common/TechTag";
 import JavaScriptIcon from "@/components/icons/JavaScriptIcon";
 import PHPIcon from "@/components/icons/PHPIcon";
@@ -34,14 +35,11 @@ export default function AboutMeChapter() {
           </p>
         </div>
 
-        <figure className="order-2 md:order-1 flex flex-col justify-center gap-y-2 md:gap-y-3 py-4 md:py-0">
-          <blockquote>
-            <p className="font-serif font-medium md:leading-relaxed text-primary text-2xl md:text-3xl">
-              &quot;Perfect is the enemy of good.&quot;
-            </p>
-          </blockquote>
-          <figcaption className="text-xs text-muted-foreground">Often attributed to Voltaire</figcaption>
-        </figure>
+        <Quote
+          quote="Perfect is the enemy of good."
+          caption="Often attributed to Voltaire"
+          className="order-2 md:order-1 py-4 md:py-0"
+        />
 
         <div className="md:col-span-3 order-3 space-y-2.5">
           <p>

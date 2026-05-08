@@ -8,19 +8,21 @@ import TailwindIcon from "../icons/TailwindIcon";
 import GoIcon from "../icons/GoIcon";
 import MySQLIcon from "../icons/MySQLIcon";
 import KotlinIcon from "../icons/KotlinIcon";
+import JavaScriptIcon from "../icons/JavaScriptIcon";
 
 interface TechTagProps {
   children?: React.ReactNode;
+  name?: TechNameType;
 }
 
-export default function TechTag({ children }: TechTagProps) {
+export default function TechTag({ children, name }: TechTagProps) {
   return (
     <Badge
       variant="secondary"
       className="tracking-wide px-2 py-0.5 border-border/50 rounded-sm
         text-secondary-foreground bg-secondary/50 hover:bg-secondary transition-colors cursor-default"
     >
-      {children}
+      {children ?? (name ? (<>{getTechIcon(name)}{name}</>) : null)}
     </Badge>
   );
 }
@@ -28,6 +30,7 @@ export default function TechTag({ children }: TechTagProps) {
 export const TechName = {
   NEXT: "Next.js",
   TS: "TypeScript",
+  JS: "JavaScript",
   DRIZZLE: "Drizzle",
   GO: "Go",
   KOTLIN: "Kotlin",
@@ -41,6 +44,7 @@ export function getTechIcon(name: TechNameType) {
   return {
     [TechName.NEXT]: <NextJSIcon />,
     [TechName.TS]: <TypeScriptIcon />,
+    [TechName.JS]: <JavaScriptIcon />,
     [TechName.DRIZZLE]: <DrizzleIcon />,
     [TechName.GO]: <GoIcon />,
     [TechName.KOTLIN]: <KotlinIcon />,

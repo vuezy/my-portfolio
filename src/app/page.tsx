@@ -4,6 +4,7 @@ import profile from "@/data/profile.json";
 import OriginChapter from "./_components/OriginChapter";
 import DayJobChapter from "./_components/DayJobChapter";
 import LabChapter from "./_components/LabChapter";
+import ExtrasChapter from "./_components/ExtrasChapter";
 
 export default function MainPage() {
   return (
@@ -14,6 +15,7 @@ export default function MainPage() {
       <OriginChapter />
       <DayJobChapter />
       <LabChapter />
+      <ExtrasChapter />
     </>
   );
 }

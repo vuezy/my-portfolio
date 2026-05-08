@@ -207,6 +207,7 @@ export default function LabChapter() {
       title="Lab"
       chapterNumber={4}
       lastUpdated={lastUpdated}
+      nextChapterId="extras"
     >
       <p className="mb-6">
         <em>Code I wrote for myself. The good, the bad, and the stupid. Learning by doing.</em>

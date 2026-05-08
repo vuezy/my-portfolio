@@ -103,7 +103,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <CardContent className="grow flex flex-wrap md:flex-nowrap items-start gap-x-2 gap-y-4">
           <div className="grow space-y-4">
             <div className="space-y-1">
-              <p className="text-xs font-semibold uppercase tracking-wider text-primary/70">
+              <p className="text-xs font-semibold uppercase tracking-wider text-primary/75">
                 Key lesson
               </p>
               <div className="text-secondary-foreground leading-relaxed">
@@ -113,7 +113,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             
             {project.hardestSurprise && (
               <div className="space-y-1">
-                <p className="text-xs font-semibold uppercase tracking-wider text-primary/70">
+                <p className="text-xs font-semibold uppercase tracking-wider text-primary/75">
                   Hardest surprise
                 </p>
                 <div className="text-muted-foreground leading-relaxed">
