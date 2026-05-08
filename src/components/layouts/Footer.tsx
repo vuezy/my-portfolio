@@ -19,12 +19,12 @@ const footLinks = [
 export default function Footer() {
   return (
     <footer className="w-full border-t border-border mt-16">
-      <div className="mx-auto flex h-16 max-w-5xl 2xl:max-w-6xl items-center justify-between gap-x-2 px-6">
+      <div className="mx-auto flex flex-wrap h-min max-w-5xl 2xl:max-w-6xl items-center justify-between gap-x-2 gap-y-2 sm:gap-y-1.5 px-6 py-5">
         <p className="text-xs text-muted-foreground">
           © {new Date().getFullYear()} {profile.name}
         </p>
 
-        <nav className="flex flex-col xs:flex-row xs:items-center justify-start gap-2.5 xs:gap-5">
+        <nav className="basis-full sm:basis-auto flex flex-row items-center justify-start gap-3 sm:gap-5">
           {footLinks.map(({ href, label, icon }) => (
             <Link
               key={href}
@@ -37,6 +37,8 @@ export default function Footer() {
             </Link>
           ))}
         </nav>
+
+        <p className="basis-full text-xs text-muted-foreground">All brand logos are trademarks of their respective owners.</p>
       </div>
     </footer>
   );
