@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import profile from "@/data/profile.json";
 import Header from "@/components/layouts/Header";
 import Footer from "@/components/layouts/Footer";
+import { ThemeProvider } from "next-themes";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -30,11 +31,14 @@ export default function RootLayout({
     <html
       lang="en"
       className={cn("h-full", "antialiased", "dark", geist.variable, lora.variable)}
+      suppressHydrationWarning
     >
       <body className="min-h-screen flex flex-col">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <ThemeProvider attribute="class">
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

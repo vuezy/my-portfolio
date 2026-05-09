@@ -31,10 +31,11 @@ export default function MobileNav({ navLinks }: MobileNavProps) {
     if (!open) return;
 
     const handler = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        setOpen(false);
-        triggerRef.current?.focus();
-      }
+      if (e.key !== "Escape") return;
+      if (triggerRef.current?.closest('[aria-hidden="true"]')) return;
+
+      setOpen(false);
+      triggerRef.current?.focus();
     };
     document.addEventListener("keydown", handler);
     return () => document.removeEventListener("keydown", handler);

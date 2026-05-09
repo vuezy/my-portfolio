@@ -12,7 +12,7 @@ interface ChapterProps {
 
 export default function Chapter({ id, title, chapterNumber, lastUpdated, nextChapterId, children }: ChapterProps) {
   return (
-    <section id={id} className="max-w-5xl 2xl:max-w-6xl mx-auto px-6 pb-24 lg:pb-32 scroll-mt-14">
+    <section id={id} className="max-w-5xl 2xl:max-w-6xl mx-auto px-6 pb-24 lg:pb-32 scroll-mt-14 transition-colors duration-500">
       <div className="flex justify-between items-center gap-x-2 py-3 border-b">
         <span className="text-[10px] sm:text-[11px] font-light tracking-[0.06rem]">
           Portfolio · Ch. {chapterNumber.toString().padStart(2, '0')}
