@@ -51,8 +51,7 @@ export default function IntroductionChapter() {
 
         <div className="flex items-center justify-center gap-3 order-1 sm:order-2 sm:items-start sm:justify-start">
           <div className="w-44 h-50 sm:w-44 sm:h-56 md:w-48 md:h-60 bracket-frame">
-            <Image src="/profile.jpeg" alt="" width={192} height={240} className="block dark:hidden w-full h-full object-cover object-top" />
-            <Image src="/profile-dark.jpeg" alt="" width={192} height={240} className="hidden dark:block w-full h-full object-cover object-top" />
+            <Image src="/profile.png" alt="" width={176} height={200} className="w-full h-full object-cover object-top" />
           </div>
         </div>
       </div>
