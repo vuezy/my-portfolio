@@ -20,7 +20,7 @@ export default function TechTag({ children, name }: TechTagProps) {
     <Badge
       variant="secondary"
       className="tracking-wide px-2 py-0.5 border-border/50 rounded-sm
-        text-secondary-foreground bg-secondary/50 hover:bg-secondary cursor-default"
+        text-foreground bg-secondary/50 hover:bg-secondary cursor-default"
     >
       {children ?? (name ? (<>{getTechIcon(name)}{name}</>) : null)}
     </Badge>

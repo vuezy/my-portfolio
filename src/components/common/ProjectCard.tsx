@@ -63,7 +63,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <>
-      <Card className="group flex flex-col h-full overflow-hidden hover:shadow-primary/50 transition-all duration-500">
+      <Card className="group flex flex-col h-full overflow-hidden hover:shadow-accent/50 transition-all duration-500">
         <CardHeader>
           <div className="flex items-start justify-between gap-2">
             <CardTitle className="font-serif text-xl tracking-tight">
@@ -103,7 +103,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <CardContent className="grow flex flex-wrap md:flex-nowrap items-start gap-x-2 gap-y-4">
           <div className="grow space-y-4">
             <div className="space-y-1">
-              <p className="text-xs font-semibold uppercase tracking-wider text-primary/75">
+              <p className="text-xs font-semibold uppercase tracking-wider text-primary/80">
                 Key lesson
               </p>
               <div className="text-secondary-foreground leading-relaxed">
@@ -113,7 +113,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             
             {project.hardestSurprise && (
               <div className="space-y-1">
-                <p className="text-xs font-semibold uppercase tracking-wider text-primary/75">
+                <p className="text-xs font-semibold uppercase tracking-wider text-primary/80">
                   Hardest surprise
                 </p>
                 <div className="text-muted-foreground leading-relaxed">
@@ -260,7 +260,7 @@ interface ProjectCardBulletListProps {
 
 export function ProjectCardBulletList({ items, className }: ProjectCardBulletListProps) {
   return (
-    <ul className={cn("space-y-1 pl-4 text-sm leading-relaxed list-disc marker:text-primary/60", className)}>
+    <ul className={cn("space-y-1 pl-4 text-sm leading-relaxed list-disc marker:text-accent/60", className)}>
       {items.map((item, idx) => (
         <li key={idx}>{item}</li>
       ))}

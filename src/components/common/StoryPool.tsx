@@ -185,7 +185,7 @@ export function StoryPoolContent({ className }: StoryPoolContentProps) {
       aria-labelledby={`story-tab-${selectedId}`}
       aria-live="polite"
     >
-      <div className="leading-relaxed text-sm md:text-base text-foreground space-y-6 py-4">
+      <div className="leading-relaxed text-sm md:text-base text-secondary-foreground space-y-6 py-4">
         {activeStory ? (
           <>
             <h3 className="flex items-center gap-2 font-serif text-base md:text-lg text-primary font-semibold mb-3">

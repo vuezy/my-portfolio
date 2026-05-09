@@ -118,7 +118,7 @@ function AISection() {
         And with it, we adapt and slightly change how we develop. But these questions bother me.
       </p>
 
-      <p className="font-serif font-semibold text-primary/75 text-base md:text-lg">
+      <p className="font-serif font-semibold text-accent/80 text-base md:text-lg">
         Do we still need to understand the code?
       </p>
       <p>
@@ -140,7 +140,7 @@ function AISection() {
         <em> Blind trust doesn&apos;t feel like owning the code.</em>
       </p>
 
-      <p className="font-serif font-semibold text-primary/75 text-base md:text-lg">
+      <p className="font-serif font-semibold text-accent/80 text-base md:text-lg">
         Does code quality still matter?
       </p>
       <p>
