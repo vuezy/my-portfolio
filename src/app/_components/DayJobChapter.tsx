@@ -1,9 +1,7 @@
 import Chapter from "@/components/common/Chapter";
 import KeyTakeaway, { KeyTakeawayContent, KeyTakeawayList, KeyTakeawayListItem } from "@/components/common/KeyTakeaway";
 import StoryPoolProvider, { Story, StoryPoolContent, StoryPoolList } from "@/components/common/StoryPool";
-import TechTag from "@/components/common/TechTag";
-import JavaScriptIcon from "@/components/icons/JavaScriptIcon";
-import LaravelIcon from "@/components/icons/LaravelIcon";
+import TechTag, { TechName } from "@/components/common/TechTag";
 import { CircleGaugeIcon, ClockAlertIcon, SearchIcon, ShieldCogIcon, SunIcon, UserRoundKeyIcon } from "lucide-react";
 import React from "react";
 
@@ -258,12 +256,8 @@ export default function DayJobChapter() {
             <p className="font-semibold">Backend Developer · 2+ years</p>
             <p className="text-muted-foreground mb-2">Work on 5+ projects in a software house</p>
             <p className="flex flex-wrap gap-2 font-sans">
-              <TechTag>
-                <LaravelIcon /> Laravel
-              </TechTag>
-              <TechTag>
-                <JavaScriptIcon /> JavaScript
-              </TechTag>
+              <TechTag name={TechName.LARAVEL} />
+              <TechTag name={TechName.JS} />
             </p>
           </KeyTakeawayContent>
 

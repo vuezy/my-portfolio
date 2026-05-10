@@ -1,15 +1,7 @@
 import Chapter from "@/components/common/Chapter";
 import KeyTakeaway, { KeyTakeawayContent, KeyTakeawayList, KeyTakeawayListItem } from "@/components/common/KeyTakeaway";
 import StoryPoolProvider, { Story, StoryPoolContent, StoryPoolList } from "@/components/common/StoryPool";
-import TechTag from "@/components/common/TechTag";
-import CppIcon from "@/components/icons/CppIcon";
-import CSSIcon from "@/components/icons/CSSIcon";
-import HTMLIcon from "@/components/icons/HTMLIcon";
-import JavaScriptIcon from "@/components/icons/JavaScriptIcon";
-import KaliLinuxIcon from "@/components/icons/KaliLinuxIcon";
-import MetasploitIcon from "@/components/icons/MetasploitIcon";
-import MySQLIcon from "@/components/icons/MySQLIcon";
-import PHPIcon from "@/components/icons/PHPIcon";
+import TechTag, { TechName } from "@/components/common/TechTag";
 import { MountainIcon, Rotate3DIcon, WavesLadderIcon } from "lucide-react";
 
 const stories: Story[] = [
@@ -22,7 +14,7 @@ const stories: Story[] = [
       <>
         <p>
           It started in a high school club. Competitive programming.&nbsp;
-          <TechTag><CppIcon /> C++</TechTag>
+          <TechTag name={TechName.CPP} />
         </p>
 
         <p>
@@ -80,8 +72,8 @@ const stories: Story[] = [
       <>
         <p>
           Then COVID hit. Somewhere in that blur, I jumped into web development, starting from&nbsp;
-          <TechTag><HTMLIcon /> HTML</TechTag>, <TechTag><CSSIcon /> CSS</TechTag>, and <TechTag><JavaScriptIcon /> JS</TechTag>. 
-          Then <TechTag><PHPIcon /> PHP</TechTag> and <TechTag><MySQLIcon /> SQL</TechTag>. 
+          <TechTag name={TechName.HTML} />, <TechTag name={TechName.CSS} />, and <TechTag name={TechName.JS} />. 
+          Then <TechTag name={TechName.PHP} /> and <TechTag name={TechName.SQL} />. 
           Out of thin air. No competitions involved, just tutorials and my own little <strong>&quot;lab&quot; of personal projects.</strong>
         </p>
 
@@ -91,7 +83,7 @@ const stories: Story[] = [
 
         <p>
           I fell down that rabbit hole for a while. 
-          Ethical hacking, <TechTag><KaliLinuxIcon /> Kali Linux</TechTag>, <TechTag><MetasploitIcon /> Metasploit</TechTag>, hunting CVEs, that kind of stuff. 
+          Ethical hacking, Kali Linux, Metasploit, hunting CVEs, that kind of stuff. 
           I even tried a CTF and met reverse engineering there. Reverse engineering was fascinating, but it made me realize something, that is 
           <strong> I needed to understand systems deeper to thrive.</strong>
         </p>

@@ -30,7 +30,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import GitHubIcon from "../icons/GitHubIcon";
-import TechTag, { getTechIcon, TechNameType } from "./TechTag";
+import TechTag, { TechNameType } from "./TechTag";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { Badge } from "../ui/badge";
@@ -88,12 +88,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           )}
 
           <div className="flex flex-wrap gap-2">
-            {project.stack.map((tech, idx) => {
-              const icon = getTechIcon(tech);
-              return (
-                <TechTag key={idx}>{icon} {tech}</TechTag>
-              );
-            })}
+            {project.stack.map((tech, idx) => <TechTag key={idx} name={tech} />)}
           </div>
           <CardDescription className="text-sm text-muted-foreground mt-1">
             {project.description}

@@ -1,8 +1,5 @@
 import Chapter from "@/components/common/Chapter";
-import TechTag from "@/components/common/TechTag";
-import JavaScriptIcon from "@/components/icons/JavaScriptIcon";
-import LaravelIcon from "@/components/icons/LaravelIcon";
-import TypeScriptIcon from "@/components/icons/TypeScriptIcon";
+import TechTag, { TechName } from "@/components/common/TechTag";
 import profile from "@/data/profile.json";
 import Image from "next/image";
 
@@ -33,15 +30,9 @@ export default function IntroductionChapter() {
           </p>
 
           <div className="flex flex-wrap gap-2 mb-7">
-            <TechTag>
-              <LaravelIcon /> Laravel
-            </TechTag>
-            <TechTag>
-              <JavaScriptIcon /> JavaScript
-            </TechTag>
-            <TechTag>
-              <TypeScriptIcon /> TypeScript
-            </TechTag>
+            <TechTag name={TechName.LARAVEL} />
+            <TechTag name={TechName.JS} />
+            <TechTag name={TechName.TS} />
           </div>
 
           <div className="flex items-center gap-2 text-[10px] font-light">

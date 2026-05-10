@@ -1,9 +1,7 @@
 import Chapter from "@/components/common/Chapter";
 import Quote from "@/components/common/Quote";
-import TechTag from "@/components/common/TechTag";
+import TechTag, { TechName } from "@/components/common/TechTag";
 import WashiTape from "@/components/common/WashiTape";
-import JavaScriptIcon from "@/components/icons/JavaScriptIcon";
-import PHPIcon from "@/components/icons/PHPIcon";
 
 export default function AboutMeChapter() {
   const lastUpdated = new Date('2026-04-23');
@@ -56,7 +54,7 @@ export default function AboutMeChapter() {
           <p>
             <strong>I love learning.</strong> There&apos;s always more, and that excites me, not intimidates me.<br />
             For example, I recently realized the difference between <code>||</code> and <code>??</code> in handling 
-            falsy values in <TechTag><PHPIcon /> PHP</TechTag>/<TechTag><JavaScriptIcon /> JS</TechTag>. 
+            falsy values in <TechTag name={TechName.PHP} />/<TechTag name={TechName.JS} />. 
             Sounds stupid, should have known it sooner, but understanding it now feels exhilarating.
           </p>
 
