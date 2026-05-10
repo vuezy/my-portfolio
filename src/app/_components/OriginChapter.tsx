@@ -74,7 +74,9 @@ const stories: Story[] = [
           Then COVID hit. Somewhere in that blur, I jumped into web development, starting from&nbsp;
           <TechTag name={TechName.HTML} />, <TechTag name={TechName.CSS} />, and <TechTag name={TechName.JS} />. 
           Then <TechTag name={TechName.PHP} /> and <TechTag name={TechName.SQL} />. 
-          Out of thin air. No competitions involved, just tutorials and my own little <strong>&quot;lab&quot; of personal projects.</strong>
+          Out of thin air. No competitions involved, just tutorials and my own little <a href="#lab" className="underline underline-offset-4">
+            <strong>&quot;lab&quot; of personal projects</strong>
+          </a>.
         </p>
 
         <p>
@@ -90,7 +92,7 @@ const stories: Story[] = [
 
         <p>
           So I circled back to web development. The security mindset stayed with me though. 
-          Now <strong>I think through consequences when I write code. </strong> That&apos;s been surprisingly useful in my day job.
+          Now <strong>I think through consequences when I write code. </strong> That&apos;s been surprisingly useful in my <a href="#day-job" className="underline underline-offset-4">day job</a>.
         </p>
       </>
     ),
