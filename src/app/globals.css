@@ -35,7 +35,6 @@
   --color-border: var(--border);
   --color-destructive: var(--destructive);
   --color-avail-green: var(--avail-green);
-  --color-ruled-line: var(--ruled-line);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent: var(--accent);
   --color-muted-foreground: var(--muted-foreground);
@@ -74,7 +73,6 @@
   --accent-foreground: oklch(0.98 0.004 80);
   --destructive: oklch(0.577 0.245 27.325);
   --avail-green: oklch(0.50 0.15 150);
-  --ruled-line: oklch(0.55 0.04 80 / 8%);
   --border: oklch(0.84 0.014 75);
   --input: oklch(0.84 0.014 75);
   --ring: oklch(0.52 0.09 240);
@@ -92,6 +90,43 @@
   --sidebar-accent-foreground: oklch(0.28 0.016 65);
   --sidebar-border: oklch(0.84 0.014 75);
   --sidebar-ring: oklch(0.52 0.09 240);
+
+  /* Decorations */
+  --bg-glow-color-1: oklch(0.78 0.09 80 / 22%);
+  --bg-glow-color-2: oklch(0.70 0.06 80 / 8%);
+
+  --bg-dot-grid-color: oklch(0.50 0.035 75 / 30%);
+  --bg-dot-grid-space: 20px;
+
+  --book-spine-color: oklch(0.62 0.025 75 / 7%);
+  --book-spine-border-color: oklch(0.52 0.04 75 / 18%);
+  --book-spine-hole-color: var(--background);
+  --book-spine-hole-border-color: oklch(0.52 0.04 75 / 40%);
+
+  --ruled-line-color: oklch(0.55 0.04 80 / 8%);
+
+  --card-glow-color: oklch(0.70 0.07 80 / 5%);
+  --card-glow-border-color: oklch(0.60 0.08 80 / 32%);
+  --card-glow-shadow-color: oklch(0.65 0.08 80 / 10%);
+
+  --washi-bg: repeating-linear-gradient(
+    90deg,
+    oklch(0.66 0.11 80 / 75%) 0px,
+    oklch(0.73 0.09 85 / 52%) 4px,
+    oklch(0.66 0.11 80 / 75%) 8px
+  );
+  --washi-teal-bg: repeating-linear-gradient(
+    90deg,
+    oklch(0.58 0.10 175 / 60%) 0px,
+    oklch(0.65 0.07 175 / 42%) 4px,
+    oklch(0.58 0.10 175 / 60%) 8px
+  );
+  --washi-mauve-bg: repeating-linear-gradient(
+    90deg,
+    oklch(0.58 0.09 310 / 55%) 0px,
+    oklch(0.65 0.06 310 / 38%) 4px,
+    oklch(0.58 0.09 310 / 55%) 8px
+  );
 }
 
 .dark {
@@ -111,7 +146,6 @@
   --accent-foreground: oklch(0.155 0.008 255);
   --destructive: oklch(0.704 0.191 22.216);
   --avail-green: oklch(0.65 0.15 150);
-  --ruled-line: oklch(1 0 0 / 4%);
   --border: oklch(1 0 0 / 9%);
   --input: oklch(1 0 0 / 13%);
   --ring: oklch(0.62 0.07 240);
@@ -128,6 +162,43 @@
   --sidebar-accent-foreground: oklch(0.80 0.006 75);
   --sidebar-border: oklch(1 0 0 / 9%);
   --sidebar-ring: oklch(0.62 0.07 240);
+
+  /* Decorations */
+  --bg-glow-color-1: oklch(0.62 0.09 255 / 14%);
+  --bg-glow-color-2: oklch(0.55 0.06 255 / 5%);
+
+  --bg-dot-grid-color: oklch(0.75 0.005 265 / 15%);
+  --bg-dot-grid-space: 24px;
+
+  --book-spine-color: oklch(0.20 0.006 255 / 60%);
+  --book-spine-border-color: oklch(0.40 0.008 255 / 30%);
+  --book-spine-hole-color: oklch(0.14 0.006 255);
+  --book-spine-hole-border-color: oklch(0.55 0.008 265 / 40%);
+
+  --ruled-line-color: oklch(1 0 0 / 4%);
+
+  --card-glow-color: oklch(0.62 0.07 240 / 5%);
+  --card-glow-border-color: oklch(0.62 0.09 240 / 28%);
+  --card-glow-shadow-color: oklch(0.62 0.09 240 / 12%);
+
+  --washi-bg: repeating-linear-gradient(
+    90deg,
+    oklch(0.55 0.06 80 / 65%) 0px,
+    oklch(0.62 0.04 80 / 45%) 4px,
+    oklch(0.55 0.06 80 / 65%) 8px
+  );
+  --washi-teal-bg: repeating-linear-gradient(
+    90deg,
+    oklch(0.48 0.06 175 / 60%) 0px,
+    oklch(0.55 0.04 175 / 40%) 4px,
+    oklch(0.48 0.06 175 / 60%) 8px
+  );
+  --washi-mauve-bg: repeating-linear-gradient(
+    90deg,
+    oklch(0.48 0.05 310 / 55%) 0px,
+    oklch(0.55 0.04 310 / 38%) 4px,
+    oklch(0.48 0.05 310 / 55%) 8px
+  );
 }
 
 @layer base {
@@ -138,7 +209,7 @@
     @apply font-sans scroll-smooth;
   }
   body {
-    @apply bg-background text-foreground transition-colors;
+    @apply bg-background text-foreground;
   }
   h1, h2, h3, h4 {
     @apply font-serif;
@@ -148,50 +219,134 @@
   }
 }
 
+/* Decorations */
+@utility bg-glow {
+  background-image: radial-gradient(
+    ellipse 75% 55% at 50% 0%,
+    var(--bg-glow-color-1) 0%,
+    var(--bg-glow-color-2) 50%,
+    transparent 70%
+  );
+}
+
+@utility bg-dot-grid {
+  background-color: var(--color-background);
+  background-image: radial-gradient(
+    circle,
+    var(--bg-dot-grid-color),
+    transparent 1px
+  );
+  background-size: var(--bg-dot-grid-space) var(--bg-dot-grid-space);
+}
+
+@utility book-spine {
+  width: 2.5rem;
+  background: var(--book-spine-color);
+  border-right: 1px solid var(--book-spine-border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-block: 1rem;
+}
+
+@utility book-spine-hole {
+  width: 10px;
+  height: 10px;
+  min-height: 10px;
+  border-radius: 9999px;
+  border: 1px solid var(--book-spine-hole-border-color);
+  background: var(--book-spine-hole-color);
+}
+
 @utility ruled {
   position: relative;
-  z-index: 10;
 
   &::after {
     content: '';
     position: absolute;
-    z-index: 0;
+    z-index: -1;
     inset: 0;
     background-image: repeating-linear-gradient(
       to bottom,
       transparent,
       transparent 40px,
-      var(--color-ruled-line) 40px,
-      var(--color-ruled-line) 41px
+      var(--ruled-line-color) 40px,
+      var(--ruled-line-color) 41px
     );
     pointer-events: none;
   }
 }
 
-@utility bracket-frame {
-  position: relative;
+@utility card-glow {
+  background: var(--card-glow-color);
+  border: 0.5px solid var(--card-glow-border-color);
+  box-shadow: inset 0 -5px 5px 0.5px var(--card-glow-shadow-color);
+}
 
-  &::before,
-  &::after {
+@utility washi {
+  background: var(--washi-bg);
+}
+
+@utility washi-teal {
+  background: var(--washi-teal-bg);
+}
+
+@utility washi-mauve {
+  background: var(--washi-mauve-bg);
+}
+
+@utility corner-frame {
+  position: relative;
+ 
+  &::before, &::after {
     content: '';
     position: absolute;
-    width: 12px;
-    height: 12px;
+    width: 18px;
+    height: 18px;
     border-style: solid;
     border-color: var(--color-primary);
     z-index: 2;
-    opacity: 0.6;
+    opacity: 0.5;
+  }
+ 
+  &::before {
+    top: -6px;
+    left: -6px;
+    border-width: 1.5px 0 0 1.5px;
+  }
+ 
+  &::after {
+    bottom: -6px;
+    right: -6px;
+    border-width: 0 1.5px 1.5px 0;
+  }
+}
+ 
+@utility corner-frame-inner {
+  position: absolute;
+  inset: 0;
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-style: solid;
+    border-color: var(--color-primary);
+    z-index: 2;
+    opacity: 0.3;
   }
 
   &::before {
-    top: -5px;
-    left: -5px;
-    border-width: 2px 0 0 2px;
+    top: -3px;
+    left: -3px;
+    border-width: 1.5px 0 0 1.5px;
   }
-
+ 
   &::after {
-    bottom: -5px;
-    right: -5px;
-    border-width: 0 2px 2px 0;
+    bottom: -3px;
+    right: -3px;
+    border-width: 0 1.5px 1.5px 0;
   }
 }

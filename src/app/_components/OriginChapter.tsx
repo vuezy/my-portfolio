@@ -115,8 +115,9 @@ export default function OriginChapter() {
       chapterNumber={2}
       lastUpdated={lastUpdated}
       nextChapterId="day-job"
+      ruled={true}
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 items-stretch gap-4 ruled">
+      <div className="grid grid-cols-1 md:grid-cols-2 items-stretch gap-4">
         <KeyTakeaway>
           <KeyTakeawayContent className="text-sm sm:text-base md:text-sm lg:text-base text-muted-foreground space-y-1">
             <p>Learn and solve problems under pressure.</p>

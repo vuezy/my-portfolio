@@ -250,8 +250,9 @@ export default function DayJobChapter() {
       chapterNumber={3}
       lastUpdated={lastUpdated}
       nextChapterId="lab"
+      ruled={true}
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 items-stretch gap-4 ruled">
+      <div className="grid grid-cols-1 md:grid-cols-2 items-stretch gap-4">
         <KeyTakeaway>
           <KeyTakeawayContent className="space-y-1">
             <p className="font-semibold">Backend Developer · 2+ years</p>

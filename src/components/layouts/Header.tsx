@@ -15,7 +15,7 @@ const navLinks = [
 export default function Header() {
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-sm transition-colors">
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-sm">
       <div className="relative mx-auto flex h-14 max-w-5xl 2xl:max-w-6xl items-center justify-between gap-x-2 px-6">
         <div className="flex flex-row-reverse items-center gap-1.5 xs:gap-2">
           <a

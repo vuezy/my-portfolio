@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { BookMarkedIcon } from "lucide-react";
 import React, { useId } from "react";
+import WashiTape from "./WashiTape";
 
 interface KeyTakeawayProps {
   children: React.ReactNode;
@@ -14,7 +15,7 @@ export default function KeyTakeaway({ children }: KeyTakeawayProps) {
       role="note"
       aria-labelledby={labelId}
       className={cn(
-        "bg-accent/5 rounded-lg border border-accent/20 border-l-8 border-l-accent",
+        "relative bg-accent/5 rounded-lg border border-accent/20 border-l-8 border-l-accent",
         "p-5 pl-6 md:p-6 md:pl-8",
       )}
     >
@@ -29,6 +30,9 @@ export default function KeyTakeaway({ children }: KeyTakeawayProps) {
       </div>
 
       {children}
+
+      <WashiTape variant="mauve" className="w-15 top-0 -left-7 -rotate-50" />
+      <WashiTape variant="teal" className="w-20 bottom-0 -right-5 -rotate-45" />
     </div>
   );
 }

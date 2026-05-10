@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { ChevronDownIcon } from "lucide-react";
 import React from "react";
 
@@ -7,12 +8,14 @@ interface ChapterProps {
   chapterNumber: number;
   lastUpdated: Date;
   nextChapterId?: string;
+  className?: string;
+  ruled?: boolean;
   children?: React.ReactNode;
 }
 
-export default function Chapter({ id, title, chapterNumber, lastUpdated, nextChapterId, children }: ChapterProps) {
+export default function Chapter({ id, title, chapterNumber, lastUpdated, nextChapterId, className, ruled, children }: ChapterProps) {
   return (
-    <section id={id} className="max-w-5xl 2xl:max-w-6xl mx-auto px-6 pb-24 lg:pb-32 scroll-mt-14 transition-colors duration-500">
+    <section id={id} className={cn("max-w-5xl 2xl:max-w-6xl mx-auto px-6 scroll-mt-14 transition-colors", className)}>
       <div className="flex justify-between items-center gap-x-2 py-3 border-b">
         <span className="text-[10px] sm:text-[11px] font-light tracking-[0.06rem]">
           Portfolio · Ch. {chapterNumber.toString().padStart(2, '0')}
@@ -27,14 +30,15 @@ export default function Chapter({ id, title, chapterNumber, lastUpdated, nextCha
         <h2>{title}</h2>
       </div>
 
-      {children}
-
-      {nextChapterId && 
-        <a href={`#${nextChapterId}`} className="flex flex-col items-center w-fit mx-auto mt-10 pb-9">
-          <span className="text-[10px] font-light tracking-[0.18rem] uppercase">Read On</span>
-          <ChevronDownIcon className="w-4.5" />
-        </a>
-      }
+      <div className={cn("pb-24 lg:pb-32", { "ruled": ruled })}>
+        {children}
+        {nextChapterId && 
+          <a href={`#${nextChapterId}`} className="flex flex-col items-center w-fit mx-auto mt-10 pb-9">
+            <span className="text-[10px] font-light tracking-[0.18rem] uppercase">Read On</span>
+            <ChevronDownIcon className="w-4.5" />
+          </a>
+        }
+      </div>
     </section>
   );
 }

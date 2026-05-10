@@ -63,7 +63,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <>
-      <Card className="group flex flex-col h-full overflow-hidden hover:shadow-accent/50 transition-all duration-500">
+      <Card className="group card-glow flex flex-col h-full overflow-hidden transition-all">
         <CardHeader>
           <div className="flex items-start justify-between gap-2">
             <CardTitle className="font-serif text-xl tracking-tight">
@@ -124,11 +124,12 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </div>
           {project.image && project.image.src.length > 0 && (
             <div className={cn(
-              "relative grow-0 bracket-frame",
+              "relative grow-0 corner-frame",
               isMobileSizeImage 
                 ? "min-w-full xs:min-w-4/5 sm:min-w-fit sm:min-h-64 aspect-square"
                 : "min-w-full sm:min-w-xs aspect-video"
             )}>
+              <div className="corner-frame-inner"></div>
               <Image
                 src={project.image.src[0]}
                 alt=""

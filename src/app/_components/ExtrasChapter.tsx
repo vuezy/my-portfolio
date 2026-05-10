@@ -1,6 +1,7 @@
 import Chapter from "@/components/common/Chapter";
 import Quote from "@/components/common/Quote";
 import TechTag, { TechName } from "@/components/common/TechTag";
+import WashiTape from "@/components/common/WashiTape";
 import Link from "next/link";
 import React from "react";
 
@@ -13,8 +14,9 @@ export default function ExtrasChapter() {
       title="Extras"
       chapterNumber={5}
       lastUpdated={lastUpdated}
+      ruled={true}
     >
-      <div className="space-y-10 ruled">
+      <div className="space-y-10">
         <ArticleSection />
         <OverengineeringSection />
         <AISection />
@@ -113,51 +115,49 @@ function OverengineeringSection() {
 function AISection() {
   return (
     <Section title="About AI">
-      <p className="border-b border-secondary-foreground pb-3">
+      <p className="mb-6">
         By now, most developers have used AI. <em>It boosts productivity. </em> 
         And with it, we adapt and slightly change how we develop. But these questions bother me.
       </p>
 
-      <p className="font-serif font-semibold text-accent/80 text-base md:text-lg">
-        Do we still need to understand the code?
-      </p>
-      <p>
-        We&apos;ve seen claims of people shipping apps without writing or understanding a single line of code. 
-        Whether that is true or not, I think AI for sure can generate working features when <strong>requirements are clear</strong>. 
-        But without understanding the code, how do we debug or solve subtle implementation flaws? 
-        I mean, AI can review, find bugs, and even write tests. 
-        But if we don&apos;t understand the code, how do we know the tests are correct? 
-        <em> A passing test could be testing the wrong thing.</em>
-      </p>
-      <p>
-        AI&apos;s output isn&apos;t perfect, neither are humans. 
-        I think the difference is that humans sense when something feels wrong/inconsistent, breaking patterns, or adding future pain. 
-        AI sees token patterns without that gut feeling for trade-offs. 
-        <strong> Humans know which context matters.</strong>
-      </p>
-      <p className="border-b border-secondary-foreground pb-3">
-        For detailed work, I believe we need at least some idea of what AI is doing. 
-        <em> Blind trust doesn&apos;t feel like owning the code.</em>
-      </p>
+      <SectionQuestion question="Do we still need to understand the code?">
+        <p>
+          We&apos;ve seen claims of people shipping apps without writing or understanding a single line of code. 
+          Whether that is true or not, I think AI for sure can generate working features when <strong>requirements are clear</strong>. 
+          But without understanding the code, how do we debug or solve subtle implementation flaws? 
+          I mean, AI can review, find bugs, and even write tests. 
+          But if we don&apos;t understand the code, how do we know the tests are correct? 
+          <em> A passing test could be testing the wrong thing.</em>
+        </p>
+        <p>
+          AI&apos;s output isn&apos;t perfect, neither are humans. 
+          I think the difference is that humans sense when something feels wrong/inconsistent, breaking patterns, or adding future pain. 
+          AI sees token patterns without that gut feeling for trade-offs. 
+          <strong> Humans know which context matters.</strong>
+        </p>
+        <p>
+          For detailed work, I believe we need at least some idea of what AI is doing. 
+          <em> Blind trust doesn&apos;t feel like owning the code.</em>
+        </p>
+      </SectionQuestion>
 
-      <p className="font-serif font-semibold text-accent/80 text-base md:text-lg">
-        Does code quality still matter?
-      </p>
-      <p>
-        Do coupling, maintenance, or technical debt still matter if AI does most of the work?
-      </p>
-      <p>
-        AI bakes in best practices but becomes inconsistent without proper rules, especially in messy codebases. 
-        <strong> The messier the code, the more AI misinterprets intent. </strong> 
-        A well-written codebase gives AI focused context, leading to better output. 
-        It also helps humans that review AI&apos;s work.
-      </p>
-      <p className="border-b border-secondary-foreground pb-3">
-        But let&apos;s be honest, <strong>users don&apos;t see code</strong>, and therefore speed wins. 
-        With AI, people may even ignore quality entirely, thinking <em>&quot;AI can understand it just fine.&quot;</em><br />
-        I still lean toward caring about code quality though. 
-        A (pragmatically) clean code isn&apos;t for the user. It&apos;s for the next person or the next AI that has to change it.
-      </p>
+      <SectionQuestion question="Does code quality still matter?">
+        <p>
+          Do coupling, maintenance, or technical debt still matter if AI does most of the work?
+        </p>
+        <p>
+          AI bakes in best practices but becomes inconsistent without proper rules, especially in messy codebases. 
+          <strong> The messier the code, the more AI misinterprets intent. </strong> 
+          A well-written codebase gives AI focused context, leading to better output. 
+          It also helps humans that review AI&apos;s work.
+        </p>
+        <p>
+          But let&apos;s be honest, <strong>users don&apos;t see code</strong>, and therefore speed wins. 
+          With AI, people may even ignore quality entirely, thinking <em>&quot;AI can understand it just fine.&quot;</em><br />
+          I still lean toward caring about code quality though. 
+          A (pragmatically) clean code isn&apos;t for the user. It&apos;s for the next person or the next AI that has to change it.
+        </p>
+      </SectionQuestion>      
 
       <p>
         AI has helped me write tests, implement features, and refactor more quickly and confidently. 
@@ -183,5 +183,25 @@ function Section({ title, children }: SectionProps) {
         {children}
       </div>
     </>
+  );
+}
+
+interface SectionQuestionProps {
+  question: string;
+  children: React.ReactNode;
+}
+
+function SectionQuestion({ question, children }: SectionQuestionProps) {
+  return (
+    <div className="relative mb-6">
+      <WashiTape variant="mauve" className="z-20 w-20 -top-2.5 left-10 -rotate-3" />
+      <p className="relative z-10 w-fit font-serif font-semibold text-accent text-base md:text-lg border bg-secondary rounded px-3 py-2">
+        {question}
+      </p>
+
+      <div className="border-2 rounded p-3 md:pl-5 pt-6 -ml-3 md:-ml-5 -mt-5 space-y-3">
+        {children}
+      </div>
+    </div>
   );
 }

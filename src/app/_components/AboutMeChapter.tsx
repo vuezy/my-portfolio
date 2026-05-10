@@ -1,6 +1,7 @@
 import Chapter from "@/components/common/Chapter";
 import Quote from "@/components/common/Quote";
 import TechTag from "@/components/common/TechTag";
+import WashiTape from "@/components/common/WashiTape";
 import JavaScriptIcon from "@/components/icons/JavaScriptIcon";
 import PHPIcon from "@/components/icons/PHPIcon";
 
@@ -14,8 +15,9 @@ export default function AboutMeChapter() {
       chapterNumber={1}
       lastUpdated={lastUpdated}
       nextChapterId="origin"
+      ruled={true}
     >
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-2.5 text-secondary-foreground text-sm md:text-base ruled">
+      <div className="relative grid grid-cols-1 md:grid-cols-3 gap-2.5 text-secondary-foreground text-sm md:text-base">
         <div className="md:col-span-2 order-1 md:order-2 space-y-2.5">
           <p>
             I&apos;m a backend developer who thinks through consequences before writing a single line.
@@ -35,11 +37,14 @@ export default function AboutMeChapter() {
           </p>
         </div>
 
-        <Quote
-          quote="Perfect is the enemy of good."
-          caption="Often attributed to Voltaire"
-          className="order-2 md:order-1 py-4 md:py-0"
-        />
+        <div className="order-2 md:order-1 relative h-min self-center py-4 md:py-0">
+          <WashiTape className="w-20 top-5 md:-top-5 -left-15 md:left-3 rotate-110 md:rotate-5" />
+          <Quote
+            quote="Perfect is the enemy of good."
+            caption="Often attributed to Voltaire"
+          />
+          <WashiTape variant="mauve" className="hidden md:block w-25 -bottom-5 left-30 -rotate-10" />
+        </div>
 
         <div className="md:col-span-3 order-3 space-y-2.5">
           <p>

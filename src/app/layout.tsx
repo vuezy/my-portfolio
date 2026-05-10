@@ -6,6 +6,7 @@ import profile from "@/data/profile.json";
 import Header from "@/components/layouts/Header";
 import Footer from "@/components/layouts/Footer";
 import { ThemeProvider } from "next-themes";
+import BookSpine from "@/components/common/BookSpine";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -33,9 +34,10 @@ export default function RootLayout({
       className={cn("h-full", "antialiased", "dark", geist.variable, lora.variable)}
       suppressHydrationWarning
     >
-      <body className="min-h-screen flex flex-col">
+      <body className="relative min-h-screen flex flex-col">
         <ThemeProvider attribute="class">
           <Header />
+          <BookSpine />
           <main className="flex-1">{children}</main>
           <Footer />
         </ThemeProvider>

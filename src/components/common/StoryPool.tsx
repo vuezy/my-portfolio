@@ -135,7 +135,7 @@ export function StoryPoolList({ className }: StoryPoolListProps) {
             type="button"
             onClick={() => setSelectedId(story.id)}
             className={cn(
-              "w-full text-start px-4 py-2 rounded-lg border transition-all duration-500 outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/30",
+              "w-full text-start px-4 py-2 rounded-lg border transition-all outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/30",
               "bg-background border-border hover:bg-muted/50",
               isActive && "bg-primary/5 border-primary/30 ring-1 ring-primary/20"
             )}

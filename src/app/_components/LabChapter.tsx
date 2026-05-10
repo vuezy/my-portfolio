@@ -1,6 +1,7 @@
 import Chapter from "@/components/common/Chapter";
 import { Project, ProjectCard, ProjectCardBulletList, ProjectCardDetailSection } from "@/components/common/ProjectCard";
 import { TechName } from "@/components/common/TechTag";
+import WashiTape from "@/components/common/WashiTape";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -198,6 +199,8 @@ const projects: Project[] = [
   },
 ];
 
+const washiTapeVariants = ["default", "teal", "mauve"] as const;
+
 export default function LabChapter() {
   const lastUpdated = new Date('2026-05-06');
 
@@ -215,7 +218,10 @@ export default function LabChapter() {
 
       <div className="space-y-6">
         {projects.map((project, idx) => (
-          <ProjectCard key={idx} project={project} />
+          <div key={idx} className="relative">
+            <WashiTape variant={washiTapeVariants[idx % washiTapeVariants.length]} className="w-35 top-0 -right-5 rotate-15" />
+            <ProjectCard project={project} />
+          </div>
         ))}
       </div>
     </Chapter>
