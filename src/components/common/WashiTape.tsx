@@ -1,4 +1,5 @@
 import { cva, VariantProps } from "class-variance-authority";
+import WipeIn, { WipeInProps } from "../animations/WipeIn";
 
 const washiTapeVariants = cva(
   "absolute h-5 rounded-sm opacity-55",
@@ -14,14 +15,14 @@ const washiTapeVariants = cva(
       variant: "default",
     },
   }
-)
+);
 
-interface WashiTapeProps extends VariantProps<typeof washiTapeVariants> {
-  className?: string;
-}
-
-export default function WashiTape({ className, variant = "default" }: WashiTapeProps) {
+export default function WashiTape({
+  variant = "default",
+  className,
+  ...props
+}: VariantProps<typeof washiTapeVariants> & WipeInProps) {
   return (
-    <div className={washiTapeVariants({ variant, className })} />
+    <WipeIn className={washiTapeVariants({ variant, className })} {...props} />
   );
 }

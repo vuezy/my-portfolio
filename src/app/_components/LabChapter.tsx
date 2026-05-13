@@ -1,7 +1,7 @@
+import FadeIn from "@/components/animations/FadeIn";
 import Chapter from "@/components/common/Chapter";
 import { Project, ProjectCard, ProjectCardBulletList, ProjectCardDetailSection } from "@/components/common/ProjectCard";
 import { TechName } from "@/components/common/TechTag";
-import WashiTape from "@/components/common/WashiTape";
 import GitHubIcon from "@/components/icons/GitHubIcon";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -213,27 +213,26 @@ export default function LabChapter() {
       lastUpdated={lastUpdated}
       nextChapterId="extras"
     >
-      <p className="mb-2">
-        <em>Code I wrote for myself. The good, the bad, and the stupid. Learning by doing.</em>
-      </p>
+      <FadeIn direction="inplace">
+        <p className="mb-2">
+          <em>Code I wrote for myself. The good, the bad, and the stupid. Learning by doing.</em>
+        </p>
 
-      <Button variant="outline" asChild>
-        <Link
-          href="https://github.com/vuezy?tab=repositories"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mb-6"
-        >
-          <GitHubIcon className="size-4" /> View all repositories
-        </Link>
-      </Button>
-
+        <Button variant="outline" asChild>
+          <Link
+            href="https://github.com/vuezy?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mb-6"
+          >
+            <GitHubIcon className="size-4" /> View all repositories
+          </Link>
+        </Button>
+      </FadeIn>
+      
       <div className="space-y-6">
         {projects.map((project, idx) => (
-          <div key={idx} className="relative">
-            <WashiTape variant={washiTapeVariants[idx % washiTapeVariants.length]} className="w-35 top-0 -right-5 rotate-15" />
-            <ProjectCard project={project} />
-          </div>
+          <ProjectCard key={idx} project={project} washiTapeVariant={washiTapeVariants[idx % washiTapeVariants.length]} />
         ))}
       </div>
     </Chapter>

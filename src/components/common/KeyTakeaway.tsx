@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import { BookMarkedIcon } from "lucide-react";
 import React, { useId } from "react";
 import WashiTape from "./WashiTape";
+import FadeIn from "../animations/FadeIn";
 
 interface KeyTakeawayProps {
   children: React.ReactNode;
@@ -11,7 +12,8 @@ export default function KeyTakeaway({ children }: KeyTakeawayProps) {
   const labelId = useId();
 
   return (
-    <div
+    <FadeIn
+      direction="inplace"
       role="note"
       aria-labelledby={labelId}
       className={cn(
@@ -29,11 +31,13 @@ export default function KeyTakeaway({ children }: KeyTakeawayProps) {
         </span>
       </div>
 
-      {children}
+      <FadeIn asChildAnimation transition={{ delay: 0.2 }}>
+        {children}
+      </FadeIn>
 
-      <WashiTape variant="mauve" className="w-15 top-0 -left-7 -rotate-50" />
-      <WashiTape variant="teal" className="w-20 bottom-0 -right-5 -rotate-45" />
-    </div>
+      <WashiTape transition={{ delay: 0.1 }} variant="mauve" className="w-15 top-0 -left-7 -rotate-50" />
+      <WashiTape asChildAnimation transition={{ delay: 0.45 }} variant="teal" className="w-20 bottom-0 -right-5 -rotate-45" />
+    </FadeIn>
   );
 }
 

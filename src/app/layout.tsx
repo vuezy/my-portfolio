@@ -7,6 +7,7 @@ import Header from "@/components/layouts/Header";
 import Footer from "@/components/layouts/Footer";
 import { ThemeProvider } from "next-themes";
 import BookSpine from "@/components/common/BookSpine";
+import { MotionConfig } from "motion/react";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -35,12 +36,14 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="relative min-h-screen flex flex-col">
-        <ThemeProvider attribute="class">
-          <Header />
-          <BookSpine />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </ThemeProvider>
+        <MotionConfig reducedMotion="user">
+          <ThemeProvider attribute="class">
+            <Header />
+            <BookSpine />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </ThemeProvider>
+        </MotionConfig>
       </body>
     </html>
   );

@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import React, { createContext, useContext, useState, useRef, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "../ui/button";
+import FadeIn from "../animations/FadeIn";
 
 export interface Story {
   id: string;
@@ -120,18 +121,23 @@ export function StoryPoolList({ className }: StoryPoolListProps) {
   };
 
   return (
-    <div
+    <FadeIn
+      direction="inplace"
       role="tablist"
       className={cn("flex flex-col gap-3", className)}
       onKeyDown={handleKeyDown}
     >
       <span className="font-serif text-lg md:text-xl">Story List</span>
-      {stories.map((story) => {
+      {stories.map((story, idx) => {
         const isActive = story.id === selectedId;
         
         return (
-          <button
+          <FadeIn
             key={story.id}
+            asChildAnimation
+            direction="right"
+            transition={{ delay: 0.15 + (0.05 * idx) }}
+            as="button"
             type="button"
             onClick={() => setSelectedId(story.id)}
             className={cn(
@@ -158,10 +164,10 @@ export function StoryPoolList({ className }: StoryPoolListProps) {
                 </p>
               )}
             </div>
-          </button>
+          </FadeIn>
         );
       })}
-    </div>
+    </FadeIn>
   );
 }
 
@@ -185,7 +191,7 @@ export function StoryPoolContent({ className }: StoryPoolContentProps) {
       aria-labelledby={`story-tab-${selectedId}`}
       aria-live="polite"
     >
-      <div className="leading-relaxed text-sm md:text-base text-secondary-foreground space-y-6 py-4">
+      <FadeIn className="leading-relaxed text-sm md:text-base text-secondary-foreground space-y-6 py-4">
         {activeStory ? (
           <>
             <h3 className="flex items-center gap-2 font-serif text-base md:text-lg text-primary font-semibold mb-3">
@@ -199,8 +205,8 @@ export function StoryPoolContent({ className }: StoryPoolContentProps) {
         ) : (
           <p className="font-serif text-muted-foreground text-base md:text-lg">Select a story to read more.</p>
         )}
-      </div>
-      <StoryNav />
+        <StoryNav />
+      </FadeIn>
     </div>
   );
 }

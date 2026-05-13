@@ -1,3 +1,4 @@
+import FadeIn from "@/components/animations/FadeIn";
 import Chapter from "@/components/common/Chapter";
 import Quote from "@/components/common/Quote";
 import TechTag, { TechName } from "@/components/common/TechTag";
@@ -70,7 +71,9 @@ function ArticleSection() {
 function OverengineeringSection() {
   return (
     <Section title="The Overengineering Arc">
-      <Quote quote="I question a lot of things, sometimes a little bit too much." />
+      <FadeIn asChildAnimation direction="right">
+        <Quote quote="I question a lot of things, sometimes a little bit too much." />
+      </FadeIn>
 
       <p>
         Have you ever struggled to make a decision? 
@@ -175,14 +178,14 @@ interface SectionProps {
 
 function Section({ title, children }: SectionProps) {
   return (
-    <>
+    <FadeIn>
       <h3 className="text-base md:text-lg text-primary font-semibold tracking-wider uppercase mb-3">
         {title}
       </h3>
       <div className="text-sm md:text-base text-secondary-foreground leading-relaxed space-y-3">
         {children}
       </div>
-    </>
+    </FadeIn>
   );
 }
 
@@ -193,15 +196,22 @@ interface SectionQuestionProps {
 
 function SectionQuestion({ question, children }: SectionQuestionProps) {
   return (
-    <div className="relative mb-6">
-      <WashiTape variant="mauve" className="z-20 w-20 -top-2.5 left-10 -rotate-3" />
+    <FadeIn className="relative mb-6">
+      <WashiTape
+        variant="mauve"
+        className="z-20 w-20 -top-2.5 left-10 -rotate-3"
+        asChildAnimation
+        transition={{ delay: 0.5 }}
+      />
       <p className="relative z-10 w-fit font-serif font-semibold text-accent text-base md:text-lg border bg-secondary rounded px-3 py-2">
         {question}
       </p>
 
       <div className="border-2 rounded p-3 md:pl-5 pt-6 -ml-3 md:-ml-5 -mt-5 space-y-3">
-        {children}
+        <FadeIn asChildAnimation transition={{ delay: 0.3 }}>
+          {children}
+        </FadeIn>
       </div>
-    </div>
+    </FadeIn>
   );
 }

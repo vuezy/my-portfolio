@@ -34,6 +34,8 @@ import TechTag, { TechNameType } from "./TechTag";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { Badge } from "../ui/badge";
+import FadeIn from "../animations/FadeIn";
+import WashiTape from "./WashiTape";
 
 export interface Project {
   title: string;
@@ -55,101 +57,124 @@ export interface Project {
 
 interface ProjectCardProps {
   project: Project;
+  washiTapeVariant?: "default" | "teal" | "mauve";
 }
 
-export function ProjectCard({ project }: ProjectCardProps) {
+export function ProjectCard({ project, washiTapeVariant }: ProjectCardProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const isMobileSizeImage = project.image?.size === "mobile";
 
   return (
     <>
-      <Card className="group card-glow flex flex-col h-full overflow-hidden transition-all">
-        <CardHeader>
-          <div className="flex items-start justify-between gap-2">
-            <CardTitle className="font-serif text-xl tracking-tight">
-              {project.title}
-            </CardTitle>
-            <div className="flex gap-1">
-              <Button
-                variant="ghost"
-                size="icon"
-                className="h-8 w-8"
-                asChild
-              >
-                <Link href={project.githubLink} target="_blank" rel="noopener noreferrer">
-                  <GitHubIcon className="h-4 w-4" />
-                </Link>
-              </Button>
+      <FadeIn className="relative">
+        <Card className="group card-glow flex flex-col h-full overflow-hidden transition-all">
+          <CardHeader>
+            <div className="flex items-start justify-between gap-2">
+              <FadeIn asChildAnimation direction="inplace">
+                <CardTitle className="font-serif text-xl tracking-tight">
+                  {project.title}
+                </CardTitle>
+              </FadeIn>
+              <FadeIn asChildAnimation direction="inplace" className="flex gap-1">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="h-8 w-8"
+                  asChild
+                >
+                  <Link href={project.githubLink} target="_blank" rel="noopener noreferrer">
+                    <GitHubIcon className="h-4 w-4" />
+                  </Link>
+                </Button>
+              </FadeIn>
             </div>
-          </div>
 
-          {project.isOngoing && (
-            <Badge variant="outline" className="mb-1">Ongoing</Badge>
-          )}
-
-          <div className="flex flex-wrap gap-2">
-            {project.stack.map((tech, idx) => <TechTag key={idx} name={tech} />)}
-          </div>
-          <CardDescription className="text-sm text-muted-foreground mt-1">
-            {project.description}
-          </CardDescription>
-        </CardHeader>
-
-        <CardContent className="grow flex flex-wrap md:flex-nowrap items-start gap-x-2 gap-y-4">
-          <div className="grow space-y-4">
-            <div className="space-y-1">
-              <p className="text-xs font-semibold uppercase tracking-wider text-primary/80">
-                Key lesson
-              </p>
-              <div className="text-secondary-foreground leading-relaxed">
-                {project.keyLesson}
-              </div>
-            </div>
-            
-            {project.hardestSurprise && (
-              <div className="space-y-1">
-                <p className="text-xs font-semibold uppercase tracking-wider text-primary/80">
-                  Hardest surprise
-                </p>
-                <div className="text-muted-foreground leading-relaxed">
-                  {project.hardestSurprise}
-                </div>
-              </div>
+            {project.isOngoing && (
+              <FadeIn asChildAnimation transition={{ delay: 0.2 }}>
+                <Badge variant="outline" className="mb-1">Ongoing</Badge>
+              </FadeIn>
             )}
-          </div>
-          {project.image && project.image.src.length > 0 && (
-            <div className={cn(
-              "relative grow-0 corner-frame",
-              isMobileSizeImage 
-                ? "min-w-full xs:min-w-4/5 sm:min-w-fit sm:min-h-64 aspect-square"
-                : "min-w-full sm:min-w-xs aspect-video"
-            )}>
-              <div className="corner-frame-inner"></div>
-              <Image
-                src={project.image.src[0]}
-                alt=""
-                fill
-                sizes={
-                  isMobileSizeImage ? "(max-width: 640px) 100vw, 16rem" : "(max-width: 640px) 100vw, 25rem"
-                }
-                className="object-contain z-20"
-              />
-              <div className="absolute inset-0 bg-muted/50"></div>
-            </div>
-          )}
-        </CardContent>
 
-        <CardFooter>
-          <Button
-            variant="outline"
-            onClick={() => setIsModalOpen(true)}
-            className="w-full group/btn gap-2"
-          >
-            <span>View more details</span>
-            <ArrowRight className="group-hover/btn:translate-x-1 transition-transform duration-500" />
-          </Button>
-        </CardFooter>
-      </Card>
+            <FadeIn asChildAnimation transition={{ delay: 0.3 }}>
+              <div className="flex flex-wrap gap-2">
+                {project.stack.map((tech, idx) => <TechTag key={idx} name={tech} />)}
+              </div>
+              <CardDescription className="text-sm text-muted-foreground mt-1">
+                {project.description}
+              </CardDescription>
+            </FadeIn>
+          </CardHeader>
+
+          <CardContent className="grow flex flex-wrap md:flex-nowrap items-start gap-x-2 gap-y-4">
+            <div className="grow space-y-4">
+              <FadeIn asChildAnimation className="space-y-1">
+                <p className="text-xs font-semibold uppercase tracking-wider text-primary/80">
+                  Key lesson
+                </p>
+                <FadeIn asChildAnimation direction="right" transition={{ delay: 0.4 }} className="text-secondary-foreground leading-relaxed">
+                  {project.keyLesson}
+                </FadeIn>
+              </FadeIn>
+              
+              {project.hardestSurprise && (
+                <FadeIn asChildAnimation className="space-y-1">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-primary/80">
+                    Hardest surprise
+                  </p>
+                  <FadeIn asChildAnimation direction="right" transition={{ delay: 0.5 }} className="text-muted-foreground leading-relaxed">
+                    {project.hardestSurprise}
+                  </FadeIn>
+                </FadeIn>
+              )}
+            </div>
+            {project.image && project.image.src.length > 0 && (
+              <FadeIn
+                asChildAnimation
+                direction="inplace"
+                transition={{ delay: 0.3 }}
+                className={cn(
+                  "relative grow-0 corner-frame",
+                  isMobileSizeImage 
+                    ? "min-w-full xs:min-w-4/5 sm:min-w-fit sm:min-h-64 aspect-square"
+                    : "min-w-full sm:min-w-xs aspect-video"
+                )}
+              >
+                <div className="corner-frame-inner"></div>
+                <Image
+                  src={project.image.src[0]}
+                  alt=""
+                  fill
+                  sizes={
+                    isMobileSizeImage ? "(max-width: 640px) 100vw, 16rem" : "(max-width: 640px) 100vw, 25rem"
+                  }
+                  className="object-contain z-20"
+                />
+                <div className="absolute inset-0 bg-muted/50"></div>
+              </FadeIn>
+            )}
+          </CardContent>
+
+          <CardFooter>
+            <FadeIn asChildAnimation direction="right" transition={{ delay: 0.6 }} className="w-full">
+              <Button
+                variant="outline"
+                onClick={() => setIsModalOpen(true)}
+                className="w-full group/btn gap-2"
+              >
+                <span>View more details</span>
+                <ArrowRight className="group-hover/btn:translate-x-1 transition-transform duration-500" />
+              </Button>
+            </FadeIn>
+          </CardFooter>
+        </Card>
+
+        <WashiTape
+          variant={washiTapeVariant}
+          className="w-35 top-0 -right-5 rotate-15"
+          asChildAnimation
+          transition={{ delay: 0.3 }}
+        />
+      </FadeIn>
       
       <ProjectDetails project={project} open={isModalOpen} onChange={setIsModalOpen} />
     </>

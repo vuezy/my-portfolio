@@ -1,3 +1,4 @@
+import FadeIn from "@/components/animations/FadeIn";
 import Chapter from "@/components/common/Chapter";
 import Quote from "@/components/common/Quote";
 import TechTag, { TechName } from "@/components/common/TechTag";
@@ -15,7 +16,7 @@ export default function AboutMeChapter() {
       nextChapterId="origin"
       ruled={true}
     >
-      <div className="relative grid grid-cols-1 md:grid-cols-3 gap-2.5 text-secondary-foreground text-sm md:text-base">
+      <FadeIn className="relative grid grid-cols-1 md:grid-cols-3 gap-2.5 text-secondary-foreground text-sm md:text-base">
         <div className="md:col-span-2 order-1 md:order-2 space-y-2.5">
           <p>
             I&apos;m a backend developer who thinks through consequences before writing a single line.
@@ -35,14 +36,14 @@ export default function AboutMeChapter() {
           </p>
         </div>
 
-        <div className="order-2 md:order-1 relative h-min self-center py-4 md:py-0">
-          <WashiTape className="w-20 top-5 md:-top-5 -left-15 md:left-3 rotate-110 md:rotate-5" />
+        <FadeIn asChildAnimation direction="right" className="order-2 md:order-1 relative h-min self-center py-4 md:py-0">
+          <WashiTape asChildAnimation transition={{ delay: 0.3 }} className="w-20 top-5 md:-top-5 -left-15 md:left-3 rotate-110 md:rotate-5" />
           <Quote
             quote="Perfect is the enemy of good."
             caption="Often attributed to Voltaire"
           />
-          <WashiTape variant="mauve" className="hidden md:block w-25 -bottom-5 left-30 -rotate-10" />
-        </div>
+          <WashiTape asChildAnimation transition={{ delay: 0.5 }} variant="mauve" className="hidden md:block w-25 -bottom-5 left-30 -rotate-10" />
+        </FadeIn>
 
         <div className="md:col-span-3 order-3 space-y-2.5">
           <p>
@@ -65,7 +66,7 @@ export default function AboutMeChapter() {
             That might be my inexperience, but <strong>I&apos;d rather be pragmatic than pure.</strong>
           </p>
         </div>
-      </div>
+      </FadeIn>
     </Chapter>
   );
 }

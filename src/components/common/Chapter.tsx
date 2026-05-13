@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { ChevronDownIcon } from "lucide-react";
 import React from "react";
+import FadeIn from "../animations/FadeIn";
 
 interface ChapterProps {
   id: string;
@@ -17,26 +18,28 @@ export default function Chapter({ id, title, chapterNumber, lastUpdated, nextCha
   return (
     <section id={id} className={cn("max-w-5xl 2xl:max-w-6xl mx-auto px-6 scroll-mt-14 transition-colors", className)}>
       <div className="flex justify-between items-center gap-x-2 py-3 border-b">
-        <span className="text-[10px] sm:text-[11px] font-light tracking-[0.06rem]">
+        <FadeIn onMount direction="right" className="text-[10px] sm:text-[11px] font-light tracking-[0.06rem]">
           Portfolio · Ch. {chapterNumber.toString().padStart(2, '0')}
-        </span>
-        <span className="text-[10px] sm:text-[11px] font-light tracking-[0.06rem]">
+        </FadeIn>
+        <FadeIn onMount direction="left" className="text-[10px] sm:text-[11px] font-light tracking-[0.06rem]">
           Last Updated · {lastUpdated.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
-        </span>
+        </FadeIn>
       </div>
 
-      <div className="flex items-center gap-2.5 py-6 text-sm font-light tracking-[0.18rem] uppercase">
+      <FadeIn onMount direction="right" transition={{ delay: 0.3 }} className="flex items-center gap-2.5 py-6 text-sm font-light tracking-[0.18rem] uppercase">
         <span className="inline-block w-5 h-px bg-border"></span>
         <h2>{title}</h2>
-      </div>
+      </FadeIn>
 
       <div className={cn("pb-24 lg:pb-32", { "ruled": ruled })}>
         {children}
         {nextChapterId && 
-          <a href={`#${nextChapterId}`} className="flex flex-col items-center w-fit mx-auto mt-10 pb-9">
-            <span className="text-[10px] font-light tracking-[0.18rem] uppercase">Read On</span>
-            <ChevronDownIcon className="w-4.5" />
-          </a>
+          <FadeIn direction="up">
+            <a href={`#${nextChapterId}`} className="flex flex-col items-center w-fit mx-auto mt-8 pb-9">
+              <span className="text-[10px] font-light tracking-[0.18rem] uppercase">Read On</span>
+              <ChevronDownIcon className="w-4.5" />
+            </a>
+          </FadeIn>
         }
       </div>
     </section>
