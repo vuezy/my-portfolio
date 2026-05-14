@@ -244,7 +244,13 @@ function ImageGallery({ images, isMobileSizeImage }: ImageGalleryProps) {
   if (images.length === 0) return null;
 
   return (
-      <Carousel opts={{ loop: true }} className="w-full">
+      <Carousel 
+        opts={{
+          loop: true,
+          breakpoints: { '(prefers-reduced-motion: reduce)': { duration: 0 } },
+        }}
+        className="w-full"
+      >
         <CarouselContent>
           {images.map((image, idx) => (
             <CarouselItem key={idx}>

@@ -5,6 +5,7 @@ import React, { createContext, useContext, useState, useRef, useCallback } from 
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "../ui/button";
 import FadeIn from "../animations/FadeIn";
+import { useReducedMotion } from "motion/react";
 
 export interface Story {
   id: string;
@@ -46,6 +47,7 @@ interface StoryPoolProviderProps {
 export default function StoryPoolProvider({ stories, defaultStoryId, children }: StoryPoolProviderProps) {
   const [selectedId, setSelectedId] = useState(defaultStoryId);
   const contentRef = useRef<HTMLDivElement>(null);
+  const shouldReduceMotion = useReducedMotion();
 
   const currentIndex = stories.findIndex((story) => story.id === selectedId);
 
@@ -53,9 +55,9 @@ export default function StoryPoolProvider({ stories, defaultStoryId, children }:
     setSelectedId(id);
     // Try letting the DOM swaps the content before we attempt to scroll
     setTimeout(() => {
-      contentRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      contentRef.current?.scrollIntoView({ behavior: shouldReduceMotion ? "auto" : "smooth", block: "start" });
     }, 50);
-  }, []);
+  }, [shouldReduceMotion]);
 
   const goNext = useCallback(() => {
     if (currentIndex < stories.length - 1) {
