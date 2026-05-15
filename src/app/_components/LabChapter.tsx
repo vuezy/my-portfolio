@@ -4,6 +4,7 @@ import { Project, ProjectCard, ProjectCardBulletList, ProjectCardDetailSection }
 import { TechName } from "@/components/common/TechTag";
 import GitHubIcon from "@/components/icons/GitHubIcon";
 import { Button } from "@/components/ui/button";
+import projectImages from "@/data/projects.json";
 import Link from "next/link";
 
 const projects: Project[] = [
@@ -24,11 +25,7 @@ const projects: Project[] = [
       "Flakiness in E2E tests is avoidable",
     ]} />,
     image: {
-      src: [
-        "/withabit/withabit-1.png",
-        "/withabit/withabit-2.png",
-        "/withabit/withabit-3.png",
-      ],
+      src: projectImages.withabit,
       size: "desktop",
     },
     details: {
@@ -97,9 +94,7 @@ const projects: Project[] = [
       "Documentation is harder than it looks",
     ]} />,
     image: {
-      src: [
-        "/teeny-store/teeny-store.png",
-      ],
+      src: projectImages["teeny-store"],
       size: "desktop",
     },
     details: {
@@ -155,11 +150,7 @@ const projects: Project[] = [
       "The vendor directory in Go is almost always recommended to be committed",
     ]} />,
     image: {
-      src: [
-        "/ask-answer/ask-answer-1.jpg",
-        "/ask-answer/ask-answer-2.jpg",
-        "/ask-answer/ask-answer-3.jpg",
-      ],
+      src: projectImages["ask-answer"],
       size: "mobile",
     },
     details: {
