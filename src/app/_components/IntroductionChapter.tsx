@@ -14,7 +14,7 @@ export default function IntroductionChapter() {
       chapterNumber={0}
       lastUpdated={lastUpdated}
       nextChapterId="about-me"
-      className="relative bg-glow paper-grain after:absolute after:-z-10 after:-inset-y-8 after:inset-x-0 after:xl:-inset-x-8 after:content-[''] after:bg-dot-grid"
+      className="relative bg-glow after:absolute after:-z-10 after:-inset-y-8 after:inset-x-0 after:xl:-inset-x-8 after:content-[''] after:bg-dot-grid"
     >
       <FadeIn onMount direction="inplace" className="grid grid-cols-1 sm:grid-cols-[1fr_200px] items-center gap-10 md:gap-12">
         <FadeIn asChildAnimation direction="inplace" className="flex flex-col order-2 sm:order-1">
