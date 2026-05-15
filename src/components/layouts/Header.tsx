@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-html-link-for-pages */
 import Link from "next/link";
 import { ArrowRightIcon } from "lucide-react";
 import LinkedInIcon from "../icons/LinkedInIcon";
@@ -6,11 +5,13 @@ import profile from "@/data/profile.json";
 import MobileNav from "./MobileNav";
 import { ThemeToggle } from "../common/ThemeToggle";
 
+const basePath = process.env.NEXT_PUBLIC_PAGES_BASE_PATH || '';
+
 const navLinks = [
-  { href: "/#origin", label: "Origin" },
-  { href: "/#day-job", label: "Work" },
-  { href: "/#lab", label: "Projects" },
-  { href: "/#extras", label: "Extras" },
+  { href: `/${basePath}#origin`, label: "Origin" },
+  { href: `/${basePath}#day-job`, label: "Work" },
+  { href: `/${basePath}#lab`, label: "Projects" },
+  { href: `/${basePath}#extras`, label: "Extras" },
 ];
 
 export default function Header() {
@@ -20,7 +21,7 @@ export default function Header() {
       <div className="relative mx-auto flex h-14 max-w-5xl 2xl:max-w-6xl items-center justify-between gap-x-2 px-6">
         <div className="flex flex-row-reverse items-center gap-1.5 xs:gap-2">
           <a
-            href="/#introduction"
+            href={`/${basePath}#introduction`}
             className="font-serif text-base font-semibold tracking-tight text-foreground hover:text-primary transition-colors"
           >
             {profile.name}
